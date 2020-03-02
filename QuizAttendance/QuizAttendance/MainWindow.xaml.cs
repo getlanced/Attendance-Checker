@@ -23,7 +23,43 @@ namespace QuizAttendance
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new DataGrid();
+            Main.NavigationService.Navigate(new DataGrid());
+        }
+
+        private void add_clicked(object sender, RoutedEventArgs e)
+        {
+            Main.NavigationService.Navigate(new ADDPage());
+            add_button.IsEnabled = false;
+            remove_button.IsEnabled = true;
+            edit_button.IsEnabled = true;
+            main_button.IsEnabled = true;
+        }
+
+        private void main_Click(object sender, RoutedEventArgs e)
+        {
+            Main.NavigationService.Navigate(new DataGrid());
+            main_button.IsEnabled = false;
+            add_button.IsEnabled = true;
+            remove_button.IsEnabled = true;
+            edit_button.IsEnabled = true;
+        }
+
+        private void remove_click(object sender, RoutedEventArgs e)
+        {
+            Main.NavigationService.Navigate(new RemovePage());
+            main_button.IsEnabled = true;
+            add_button.IsEnabled = true;
+            remove_button.IsEnabled = false;
+            edit_button.IsEnabled = true;
+        }
+
+        private void edit_click(object sender, RoutedEventArgs e)
+        {
+            Main.NavigationService.Navigate(new EditPage());
+            main_button.IsEnabled = true;
+            add_button.IsEnabled = true;
+            remove_button.IsEnabled = true;
+            edit_button.IsEnabled = false;
         }
     }
 }

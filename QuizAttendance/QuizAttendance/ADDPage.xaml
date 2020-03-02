@@ -5,10 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QuizAttendance"
       mc:Ignorable="d" 
-      d:DesignHeight="611" d:DesignWidth="638"
+      d:DesignHeight="621" d:DesignWidth="648"
       Title="ADDPage">
 
     <Grid Background="White">
-        
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="89,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="14,136,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="22" Margin="89,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="14,176,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="22" Margin="89,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="14,218,0,0" TextWrapping="Wrap" Text="Middle Initial" VerticalAlignment="Top"/>
+        <ComboBox x:Name="room_comboBox" HorizontalAlignment="Left" Margin="373,137,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="313,141,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top"/>
+        <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="373,176,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="313,178,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top"/>
+        <ComboBox x:Name="endTime_comboBox" HorizontalAlignment="Left" Margin="373,216,0,0" VerticalAlignment="Top" Width="107"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="313,218,0,0" TextWrapping="Wrap" Text="End Time" VerticalAlignment="Top"/>
+        <Button x:Name="Submit" Content="SUBMIT" HorizontalAlignment="Left" Margin="493,310,0,0" VerticalAlignment="Top" Width="145" Height="38"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="720,238,-172,0" VerticalAlignment="Top" Width="100"/>
+        <Grid HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="648" Background="#FF938383">
+            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,26,0,0" TextWrapping="Wrap" Text="Add Student" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        </Grid>
     </Grid>
 </Page>

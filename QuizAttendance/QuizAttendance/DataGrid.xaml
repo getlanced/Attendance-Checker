@@ -5,21 +5,33 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QuizAttendance"
       mc:Ignorable="d" 
-      d:DesignHeight="611" d:DesignWidth="638"
+      d:DesignHeight="621" d:DesignWidth="648"
       Title="DataGrid">
 
     <Grid Background="White">
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="615" Margin="0,151,0,0"/>
-        <ComboBox x:Name="room_comboBox" HorizontalAlignment="Left" Margin="56,22,0,0" VerticalAlignment="Top" Width="79"/>
-        <ComboBox x:Name="section_comboBox" HorizontalAlignment="Left" Margin="208,22,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="18,24,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="164,24,0,0" TextWrapping="Wrap" Text="Section" VerticalAlignment="Top"/>
-        <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="382,22,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="322,24,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top"/>
-        <ComboBox x:Name="endTime_comboBox" HorizontalAlignment="Left" Margin="386,63,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="326,65,0,0" TextWrapping="Wrap" Text="End Time" VerticalAlignment="Top"/>
-        <TextBox x:Name="subject_textBox" HorizontalAlignment="Left" Height="24" Margin="56,78,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" Text="Subject" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="470" VerticalAlignment="Top" Width="648" Margin="0,151,0,0"/>
+        <Grid HorizontalAlignment="Left" Height="151" VerticalAlignment="Top" Width="648">
+            <ComboBox x:Name="room_comboBox" HorizontalAlignment="Left" Margin="48,69,0,0" VerticalAlignment="Top" Width="79"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,71,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top"/>
+            <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="225,69,0,0" VerticalAlignment="Top" Width="96"/>
+            <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="165,71,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top"/>
+            <ComboBox x:Name="endTime_comboBox" HorizontalAlignment="Left" Margin="407,71,0,0" VerticalAlignment="Top" Width="107"/>
+            <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="351,71,0,0" TextWrapping="Wrap" Text="End Time" VerticalAlignment="Top"/>
+            <TextBox x:Name="subject_textBox" HorizontalAlignment="Left" Height="24" Margin="102,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+            <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="14,119,0,0" TextWrapping="Wrap" Text="Subject/Section" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="15,21,0,0" TextWrapping="Wrap" Text="Term" VerticalAlignment="Top"/>
+            <TextBox x:Name="subject_textBox_Copy1" HorizontalAlignment="Left" Height="24" Margin="434,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" IsEnabled="False"/>
+            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="401,21,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="434,41,0,0" TextWrapping="Wrap" Text="Ex. 2020-12-03" VerticalAlignment="Top" Width="120" FontStyle="Italic" FontSize="10"/>
+            <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="131,19,0,0" TextWrapping="Wrap" Text="School Year" VerticalAlignment="Top"/>
+            <ComboBox x:Name="term_comboBox" HorizontalAlignment="Left" Margin="48,17,0,0" VerticalAlignment="Top" Width="49">
+                <ComboBoxItem Content="1Q" HorizontalAlignment="Left" Width="49"/>
+                <ComboBoxItem Content="2Q" HorizontalAlignment="Left" Width="49"/>
+                <ComboBoxItem Content="3Q" HorizontalAlignment="Left" Width="49"/>
+                <ComboBoxItem Content="4Q" HorizontalAlignment="Left" Width="49"/>
+            </ComboBox>
+        </Grid>
+        <ComboBox x:Name="schoolYear_comboBox" HorizontalAlignment="Left" Margin="197,15,0,0" VerticalAlignment="Top" Width="96"/>
 
     </Grid>
 </Page>

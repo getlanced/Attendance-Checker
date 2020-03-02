@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizAttendance"
         mc:Ignorable="d"
-        Title="MainWindow" Height="661.5" Width="761">
+        Title="MainWindow" Height="661.5" Width="768.5">
     <Grid>
-        <Frame x:Name="Main" Content="" HorizontalAlignment="Left" Height="611" Margin="10,10,0,0" VerticalAlignment="Top" Width="638"/>
-        <Button x:Name="add_button" Content="ADD" HorizontalAlignment="Left" Margin="653,144,0,0" VerticalAlignment="Top" Width="90" Height="42"/>
-        <Button x:Name="remove_button" Content="REMOVE" HorizontalAlignment="Left" Margin="653,206,0,0" VerticalAlignment="Top" Width="90" Height="42"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="653,123,0,0" TextWrapping="Wrap" Text="Functions" VerticalAlignment="Top"/>
-        <Button x:Name="edit_button" Content="EDIT" HorizontalAlignment="Left" Margin="653,269,0,0" VerticalAlignment="Top" Width="90" Height="42"/>
+        <Frame x:Name="Main" Content="" HorizontalAlignment="Left" Height="621" VerticalAlignment="Top" Width="648" NavigationUIVisibility="Hidden"/>
+        <Grid HorizontalAlignment="Left" Height="631" Margin="648,0,0,0" VerticalAlignment="Top" Width="112" Background="#FF938383">
+            <Button x:Name="main_button" Content="MAIN" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="main_Click"/>
+            <Button x:Name="add_button" Content="ADD" HorizontalAlignment="Left" Margin="0,284,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="add_clicked"/>
+            <Button x:Name="remove_button" Content="REMOVE" HorizontalAlignment="Left" Margin="0,161,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="remove_click"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Functions" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+            <Button x:Name="edit_button" Content="EDIT" HorizontalAlignment="Left" Margin="0,221,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="edit_click"/>
+        </Grid>
 
     </Grid>
 </Window>
