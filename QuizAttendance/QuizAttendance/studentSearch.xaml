@@ -13,21 +13,15 @@
         <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="648" Background="#FF938383">
             <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Search Student" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontStyle="Italic" Width="224"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="197" VerticalAlignment="Top" Width="648" Margin="0,50,0,0">
-            <TextBox x:Name="firstName_textBox" HorizontalAlignment="Left" Height="24" Margin="84,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="16,30,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
-            <TextBox x:Name="lastName_textBox" HorizontalAlignment="Left" Height="24" Margin="84,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="16,63,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
-            <TextBox x:Name="middleName_textBox" HorizontalAlignment="Left" Height="24" Margin="94,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="16,102,0,0" TextWrapping="Wrap" Text="Middle Initial" VerticalAlignment="Top"/>
-            <TextBox x:Name="studentNumber_textBox" HorizontalAlignment="Left" Height="24" Margin="109,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="16,140,0,0" TextWrapping="Wrap" Text="Student Number" VerticalAlignment="Top"/>
-            <Button x:Name="button" Content="Search" HorizontalAlignment="Left" Margin="309,30,0,0" VerticalAlignment="Top" Width="109"/>
-            <Button x:Name="button_Copy" Content="Search" HorizontalAlignment="Left" Margin="309,61,0,0" VerticalAlignment="Top" Width="109"/>
-            <Button x:Name="button_Copy1" Content="Search" HorizontalAlignment="Left" Margin="309,98,0,0" VerticalAlignment="Top" Width="109"/>
-            <Button x:Name="button_Copy2" Content="Search" HorizontalAlignment="Left" Margin="309,144,0,0" VerticalAlignment="Top" Width="109"/>
+        <Grid HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="648" Margin="0,50,0,0">
+            <TextBox x:Name="firstName_textBox" HorizontalAlignment="Left" Height="24" Margin="109,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="54,30,0,0" TextWrapping="Wrap" Text="FullName" VerticalAlignment="Top"/>
+            <TextBox x:Name="studentNumber_textBox" HorizontalAlignment="Left" Height="24" Margin="109,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="16,78,0,0" TextWrapping="Wrap" Text="Student Number" VerticalAlignment="Top"/>
+            <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="499,117,0,0" VerticalAlignment="Top" Width="139" Height="24"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="272,33,0,0" TextWrapping="Wrap" Text="Ex. Tan, Mc Henry C" VerticalAlignment="Top" FontStyle="Italic" FontSize="11" Height="13" Width="115"/>
         </Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="369" VerticalAlignment="Top" Width="648" Margin="0,252,0,0"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="648" Margin="0,205,0,0"/>
 
     </Grid>
 </Page>

@@ -28,7 +28,8 @@
             <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Check Attendace" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontStyle="Italic" Width="224"/>
         </Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="423" VerticalAlignment="Top" Width="648" Margin="0,151,0,0"/>
-        <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="526,585,0,0" VerticalAlignment="Top" Width="112" Height="26"/>
+        <Button x:Name="submit_button" Content="Submit" HorizontalAlignment="Left" Margin="526,585,0,0" VerticalAlignment="Top" Width="112" Height="26"/>
+        <Button x:Name="search_button1" Content="Search" HorizontalAlignment="Left" Margin="526,120,0,0" VerticalAlignment="Top" Width="112" Height="26"/>
 
     </Grid>
 </Page>
