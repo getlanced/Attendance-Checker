@@ -20,18 +20,14 @@
             <TextBox x:Name="subject_textBox" HorizontalAlignment="Left" Height="24" Margin="102,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
             <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="14,119,0,0" TextWrapping="Wrap" Text="Subject/Section" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="15,21,0,0" TextWrapping="Wrap" Text="Term" VerticalAlignment="Top"/>
-            <TextBox x:Name="subject_textBox_Copy1" HorizontalAlignment="Left" Height="24" Margin="434,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" IsEnabled="False"/>
+            <TextBox x:Name="date_textBox" HorizontalAlignment="Left" Height="24" Margin="434,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" IsEnabled="False"/>
             <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="401,21,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="434,41,0,0" TextWrapping="Wrap" Text="Ex. 2020-12-03" VerticalAlignment="Top" Width="120" FontStyle="Italic" FontSize="10"/>
             <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="131,19,0,0" TextWrapping="Wrap" Text="School Year" VerticalAlignment="Top"/>
-            <ComboBox x:Name="term_comboBox" HorizontalAlignment="Left" Margin="48,17,0,0" VerticalAlignment="Top" Width="49">
-                <ComboBoxItem Content="1Q" HorizontalAlignment="Left" Width="49"/>
-                <ComboBoxItem Content="2Q" HorizontalAlignment="Left" Width="49"/>
-                <ComboBoxItem Content="3Q" HorizontalAlignment="Left" Width="49"/>
-                <ComboBoxItem Content="4Q" HorizontalAlignment="Left" Width="49"/>
-            </ComboBox>
+            <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="554,115,0,0" VerticalAlignment="Top" Width="84" Height="26"/>
+            <TextBox x:Name="term_textBox" HorizontalAlignment="Left" Height="24" Margin="46,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+            <TextBox x:Name="schoolYear_textBox" HorizontalAlignment="Left" Height="24" Margin="212,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
         </Grid>
-        <ComboBox x:Name="schoolYear_comboBox" HorizontalAlignment="Left" Margin="197,15,0,0" VerticalAlignment="Top" Width="96"/>
 
     </Grid>
 </Page>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace QuizAttendance
 {
     /// <summary>
-    /// Interaction logic for RemovePage.xaml
+    /// Interaction logic for studentSearch.xaml
     /// </summary>
-    public partial class RemovePage : Page
+    public partial class studentSearch : Page
     {
-        public RemovePage()
+        public studentSearch()
         {
             InitializeComponent();
         }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace QuizAttendance
 {
     /// <summary>
-    /// Interaction logic for EditPage.xaml
+    /// Interaction logic for attendanceCheck.xaml
     /// </summary>
-    public partial class EditPage : Page
+    public partial class attendanceCheck : Page
     {
-        public EditPage()
+        public attendanceCheck()
         {
             InitializeComponent();
         }

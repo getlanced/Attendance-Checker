@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\almer\Source\Repos\Attendance-Checker\QuizAttendance\QuizAttendance\App.xaml
-5362478967
+4-1194889972
 
-91918333052
+8170771587
 131569487696
-ADDPage.xaml;DataGrid.xaml;EditPage.xaml;MainWindow.xaml;RemovePage.xaml;
+attendanceCheck.xaml;DataGrid.xaml;MainWindow.xaml;studentSearch.xaml;
 
-True
+False
 
