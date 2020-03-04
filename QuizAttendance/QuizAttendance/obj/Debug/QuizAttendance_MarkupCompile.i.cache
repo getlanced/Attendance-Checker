@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\almer\Source\Repos\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\
 QuizAttendance
 none
 false
 DEBUG;TRACE
-C:\Users\almer\Source\Repos\Attendance-Checker\QuizAttendance\QuizAttendance\App.xaml
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\App.xaml
 4-1194889972
 
-9-2089035271
-131569487696
+13-661976436
+15833945659
 attendanceCheck.xaml;DataGrid.xaml;MainWindow.xaml;studentSearch.xaml;
 
-True
+False
 

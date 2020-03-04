@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Data;
 namespace QuizAttendance
 {
     /// <summary>
@@ -23,6 +23,41 @@ namespace QuizAttendance
         public studentSearch()
         {
             InitializeComponent();
+            searchStudent_dataGrid.Items.Clear();
+            searchStudent_dataGrid.Items.Refresh();
+
+        }
+
+        private void FullName_search_button_Click(object sender, RoutedEventArgs e)
+        {
+            searchStudent_dataGrid.Items.Clear();
+            searchStudent_dataGrid.Items.Refresh();
+            StudentSearchWebService.StudentSearchWebServiceSoapClient a = new StudentSearchWebService.StudentSearchWebServiceSoapClient();
+            using (a)
+            {
+                var dt = new DataTable { TableName = "Student Record" };
+                var li = a.StudentSearch(fullName_textBox.Text);
+                foreach (StudentSearchWebService.Student st in li)
+                    searchStudent_dataGrid.Items.Add(li);
+            }
+            a = null;
+            fullName_textBox.Clear();
+        }
+
+        private void StudNumber_search_button_Click(object sender, RoutedEventArgs e)
+        {
+            searchStudent_dataGrid.Items.Clear();
+            searchStudent_dataGrid.Items.Refresh();
+            StudentSearchWebService.StudentSearchWebServiceSoapClient a = new StudentSearchWebService.StudentSearchWebServiceSoapClient();
+            using (a)
+            {
+                var dt = new DataTable { TableName = "Student Record" };
+                var li = a.StudentSearchNo(studentNumber_textBox.Text);
+                foreach (StudentSearchWebService.Student st in li)
+                    searchStudent_dataGrid.Items.Add(li);
+            }
+            a = null;
+            studentNumber_textBox.Clear();
         }
     }
 }

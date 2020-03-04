@@ -14,14 +14,25 @@
             <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Search Student" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontStyle="Italic" Width="224"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="648" Margin="0,50,0,0">
-            <TextBox x:Name="firstName_textBox" HorizontalAlignment="Left" Height="24" Margin="109,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="54,30,0,0" TextWrapping="Wrap" Text="FullName" VerticalAlignment="Top"/>
+            <TextBox x:Name="fullName_textBox" HorizontalAlignment="Left" Height="24" Margin="109,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+            <TextBlock x:Name="fullName_textBlock" HorizontalAlignment="Left" Margin="54,30,0,0" TextWrapping="Wrap" Text="FullName" VerticalAlignment="Top"/>
             <TextBox x:Name="studentNumber_textBox" HorizontalAlignment="Left" Height="24" Margin="109,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-            <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="16,78,0,0" TextWrapping="Wrap" Text="Student Number" VerticalAlignment="Top"/>
-            <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="499,117,0,0" VerticalAlignment="Top" Width="139" Height="24"/>
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="272,33,0,0" TextWrapping="Wrap" Text="Ex. Tan, Mc Henry C" VerticalAlignment="Top" FontStyle="Italic" FontSize="11" Height="13" Width="115"/>
+            <TextBlock x:Name="studNumber_textBlock" HorizontalAlignment="Left" Margin="16,78,0,0" TextWrapping="Wrap" Text="Student Number" VerticalAlignment="Top"/>
+            <Button x:Name="fullName_search_button" Content="Search" HorizontalAlignment="Left" Margin="272,29,0,0" VerticalAlignment="Top" Width="139" Height="24" Click="FullName_search_button_Click"/>
+            <TextBlock x:Name="fullNameEx_textBlock" HorizontalAlignment="Left" Margin="109,54,0,0" TextWrapping="Wrap" Text="Ex. Tan, Mc Henry C" VerticalAlignment="Top" FontStyle="Italic" FontSize="11" Height="13" Width="115"/>
+            <Button x:Name="studNumber_search_button" Content="Search" HorizontalAlignment="Left" Margin="272,78,0,0" VerticalAlignment="Top" Width="139" Height="24" Click="StudNumber_search_button_Click"/>
         </Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="648" Margin="0,205,0,0"/>
+        <DataGrid x:Name="searchStudent_dataGrid" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="648" Margin="0,205,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Full Name" IsReadOnly="True" Binding="{Binding fullName}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Student No." IsReadOnly="True" Binding="{Binding studNum}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Room" IsReadOnly="True" Binding="{Binding Room}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Subject/Section" IsReadOnly="True" Binding="{Binding subSec}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Term/Year" IsReadOnly="True" Binding="{Binding termYear}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" IsReadOnly="True" Binding="{Binding date}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Attendance" IsReadOnly="True" Binding="{Binding attStat}" Width="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>
