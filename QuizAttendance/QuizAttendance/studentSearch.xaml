@@ -21,6 +21,7 @@
             <Button x:Name="fullName_search_button" Content="Search" HorizontalAlignment="Left" Margin="272,29,0,0" VerticalAlignment="Top" Width="139" Height="24" Click="FullName_search_button_Click"/>
             <TextBlock x:Name="fullNameEx_textBlock" HorizontalAlignment="Left" Margin="109,54,0,0" TextWrapping="Wrap" Text="Ex. Tan, Mc Henry C" VerticalAlignment="Top" FontStyle="Italic" FontSize="11" Height="13" Width="115"/>
             <Button x:Name="studNumber_search_button" Content="Search" HorizontalAlignment="Left" Margin="272,78,0,0" VerticalAlignment="Top" Width="139" Height="24" Click="StudNumber_search_button_Click"/>
+            <Button x:Name="clearTable_button" Content="Clear Table" HorizontalAlignment="Left" Margin="499,116,0,0" VerticalAlignment="Top" Width="139" Height="24" Click="ClearTable_button_Click"/>
         </Grid>
         <DataGrid x:Name="searchStudent_dataGrid" HorizontalAlignment="Left" Height="416" VerticalAlignment="Top" Width="648" Margin="0,205,0,0">
             <DataGrid.Columns>

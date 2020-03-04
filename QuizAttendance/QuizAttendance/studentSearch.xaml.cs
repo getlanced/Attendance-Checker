@@ -30,9 +30,8 @@ namespace QuizAttendance
 
         private void FullName_search_button_Click(object sender, RoutedEventArgs e)
         {
-            searchStudent_dataGrid.Items.Clear();
-            searchStudent_dataGrid.Items.Refresh();
-            StudentSearchWebService.StudentSearchWebServiceSoapClient a = new StudentSearchWebService.StudentSearchWebServiceSoapClient();
+            ClearTable_button_Click(sender, e);
+            var a = new StudentSearchWebService.StudentSearchWebServiceSoapClient();
             using (a)
             {
                 var dt = new DataTable { TableName = "Student Record" };
@@ -46,8 +45,7 @@ namespace QuizAttendance
 
         private void StudNumber_search_button_Click(object sender, RoutedEventArgs e)
         {
-            searchStudent_dataGrid.Items.Clear();
-            searchStudent_dataGrid.Items.Refresh();
+            ClearTable_button_Click(sender,e);
             StudentSearchWebService.StudentSearchWebServiceSoapClient a = new StudentSearchWebService.StudentSearchWebServiceSoapClient();
             using (a)
             {
@@ -58,6 +56,12 @@ namespace QuizAttendance
             }
             a = null;
             studentNumber_textBox.Clear();
+        }
+
+        private void ClearTable_button_Click(object sender, RoutedEventArgs e)
+        {
+            searchStudent_dataGrid.Items.Clear();
+            searchStudent_dataGrid.Items.Refresh();
         }
     }
 }

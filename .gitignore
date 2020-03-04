@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /QuizAttendance/QuizAttendance/Connected Services/StudentSearchWebService
+/QuizAttendance/QuizAttendance/Connected Services/ListRoomWebService
