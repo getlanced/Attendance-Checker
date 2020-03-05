@@ -1,7 +1,8 @@
 1) Drag Contents of IIS into your current IIS Folder
 
 2) Add this connection string to IIS (Server="";Database=AttendanceSystem;Integrated Security=true)
-Tutorial how to: https://blog.arvixe.com/setting-up-connection-string-with-iis-manager/
+Tutorial how to: https://blog.arvixe.com/setting-up-connection-string-with-iis-manager/ then change it also
+on WebConfig
 
 3) From SSMS, under your server, right click on security>login and click on New Login
 
