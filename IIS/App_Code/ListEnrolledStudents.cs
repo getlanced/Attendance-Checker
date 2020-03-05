@@ -58,49 +58,82 @@ public class ListEnrolledStudents : System.Web.Services.WebService
         return arr;
     }
     [WebMethod]
-    public void UpdateAttendanceRecord(string date, string studNum,string studName, bool att)
+    public void UpdateAttendanceRecord(string date, string studNum, bool att)
     {
         var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
         conn.Open();
-
-            var cmd = new SqlCommand("UpdateExistingAttendanceRecord", conn);
-            cmd.Parameters.Add("@studNum", SqlDbType.Char,10).Value = studNum;
-            cmd.Parameters.Add("@studName", SqlDbType.NVarChar, 256).Value = studName;
-            cmd.Parameters.Add("@date", SqlDbType.Date).Value = date;
-            if(att)
-                cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 1;
-            else
-                cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 2;
-            cmd.CommandType = CommandType.StoredProcedure;
-        cmd.ExecuteNonQuery();
-        conn.Close();
-    }
-    [WebMethod]
-    public void InsertToAttendanceRecord(string term, string year, string subSec, string date, string studNum, string studName, bool att)
-    {
-        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
-        conn.Open();
-
-        var cmd = new SqlCommand("InsertToAttendanceRecord", conn);
+        var cmd = new SqlCommand("UpdateExistingAttendanceRecord", conn);
         cmd.Parameters.Add("@studNum", SqlDbType.Char, 10).Value = studNum;
-        cmd.Parameters.Add("@studName", SqlDbType.NVarChar,256).Value = studName;
         cmd.Parameters.Add("@date", SqlDbType.Date).Value = date;
         if (att)
             cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 1;
         else
             cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 2;
-        cmd.Parameters.Add("@term", SqlDbType.NVarChar,2).Value = term;
-        cmd.Parameters.Add("@year", SqlDbType.NVarChar,9).Value = studName;
-        cmd.Parameters.Add("@subSec", SqlDbType.NVarChar,20).Value = subSec;
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.ExecuteNonQuery();
         conn.Close();
     }
-}
+    [WebMethod]
+    public void InsertToAttendanceRecord(string term, string year, string subSec, string date, string studNum, bool att)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        conn.Open();
 
-public class Student
-{
-    public string studNum { get; set; }
-    public string studName { get; set; }
-    public bool studAtt { get; set; }
+        var cmd = new SqlCommand("InsertToAttendanceRecord", conn);
+        cmd.Parameters.Add("@term", SqlDbType.NVarChar, 2).Value = term;
+        cmd.Parameters.Add("@year", SqlDbType.NVarChar, 9).Value = year;
+        cmd.Parameters.Add("@subSec", SqlDbType.NVarChar, 20).Value = subSec;
+        cmd.Parameters.Add("@date", SqlDbType.Date).Value = date;
+        cmd.Parameters.Add("@studNum", SqlDbType.Char, 10).Value = studNum;
+        if (att)
+            cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 1;
+        else
+            cmd.Parameters.Add("@att", SqlDbType.TinyInt).Value = 2;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
+    public bool CheckExistingRecord(string Class, string date, string endTime, string startTime)
+    {
+        bool IsExisting = false;
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        conn.Open();
+
+        var cmd = new SqlCommand("CheckExistingAttendanceRecord", conn);
+        cmd.Parameters.Add("@room", SqlDbType.NVarChar, 10).Value = Class;
+        cmd.Parameters.Add("@date", SqlDbType.Date).Value = date;
+        cmd.Parameters.Add("@endTime", SqlDbType.Time, 7).Value = endTime;
+        cmd.Parameters.Add("@startTime", SqlDbType.Time, 7).Value = startTime;
+
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader dr = cmd.ExecuteReader();
+        if (dr.Read())
+        {
+            if (dr.GetString(1).ToString() == null)
+            {
+                conn.Close();
+                IsExisting = false;
+
+            }
+
+        }
+        else
+        {
+            conn.Close();
+            IsExisting = true;
+
+        }
+
+        return IsExisting;
+    }
+    public class Student
+    {
+        public string studNum { get; set; }
+        public string studName { get; set; }
+        public bool studAtt { get; set; }
+    }
 }
