@@ -37,7 +37,7 @@ namespace QuizAttendance
                 var dt = new DataTable { TableName = "Student Record" };
                 var li = a.StudentSearch(fullName_textBox.Text);
                 foreach (StudentSearchWebService.Student st in li)
-                    searchStudent_dataGrid.Items.Add(li);
+                    searchStudent_dataGrid.Items.Add(st);
             }
             a = null;
             fullName_textBox.Clear();

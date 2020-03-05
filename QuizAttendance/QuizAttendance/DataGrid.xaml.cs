@@ -37,8 +37,8 @@ namespace QuizAttendance
             roomSearch_dataGrid.Items.Refresh();
 
             var a = new ListRoomWebService.ListRoomWebServiceSoapClient();
-            string date = day_comboBox.Text + '/' + month_comboBox.Text + '/'+year_textBox.Text;
-            
+            string date = month_comboBox.Text + '/' + day_comboBox.Text + '/' + year_textBox.Text;
+
             using (a)
             {
                 var dt = new DataTable { TableName = "Class Record" };
@@ -51,7 +51,7 @@ namespace QuizAttendance
                     );
                 foreach (ListRoomWebService.Student st in li)
                 {
-                    roomSearch_dataGrid.Items.Add(li);
+                    roomSearch_dataGrid.Items.Add(st);
                     subject_textBox.Text = st.subSec;
                 }                
             }

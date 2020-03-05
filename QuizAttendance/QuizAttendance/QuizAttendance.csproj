@@ -57,6 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\ListEnrolledStudents\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ListRoomWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +124,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ListEnrolledStudents\ListEnrolledStudents.wsdl" />
+    <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.InsertToAttendanceRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.ShowEnrolledStudentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.Student.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.UpdateAttendanceRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ListRoomWebService\ListRoomWebService.wsdl" />
     <None Include="Connected Services\ListRoomWebService\QuizAttendance.ListRoomWebService.RoomListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -151,9 +169,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WebServices\" />
+    <None Include="Connected Services\ListEnrolledStudents\ListEnrolledStudents.disco" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ListEnrolledStudents\" />
     <WCFMetadataStorage Include="Connected Services\ListRoomWebService\" />
     <WCFMetadataStorage Include="Connected Services\StudentSearchWebService\" />
   </ItemGroup>
@@ -183,6 +202,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ListRoomWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ListEnrolledStudents\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ListEnrolledStudents\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ListEnrolledStudents\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

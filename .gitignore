@@ -340,3 +340,4 @@ ASALocalRun/
 healthchecksdb
 /QuizAttendance/QuizAttendance/Connected Services/StudentSearchWebService
 /QuizAttendance/QuizAttendance/Connected Services/ListRoomWebService
+/QuizAttendance/QuizAttendance/Connected Services/ListEnrolledStudents
