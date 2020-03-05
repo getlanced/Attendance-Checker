@@ -1,0 +1,13 @@
+1) Drag Contents of IIS into your current IIS Folder
+
+2) Add this connection string to IIS (Server="";Database=AttendanceSystem;Integrated Security=true)
+Tutorial how to: https://blog.arvixe.com/setting-up-connection-string-with-iis-manager/ then change it also
+on WebConfig
+
+3) From SSMS, under your server, right click on security>login and click on New Login
+
+4) Under 'Generals' tab use Login Name IISAPPPOOL\DefaultAppPool
+
+5) Under Server Roles, tick public and sysadmin. Then, confirm creation
+
+6) After that, open the solution, reference the Webservices in the IIS folder to the current solution to get it to work
