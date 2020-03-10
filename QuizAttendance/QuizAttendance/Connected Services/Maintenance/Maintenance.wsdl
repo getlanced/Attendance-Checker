@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSchoolYears">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSchoolYearsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchoolYearsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSections">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSectionsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRooms">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRoomsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoomsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSubjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubjectsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSchoolYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSchoolYearResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertRoom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="R" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRoomResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertSection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sec" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSectionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertSubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sub" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSubjectResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSchoolYearsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchoolYears" />
+  </wsdl:message>
+  <wsdl:message name="GetSchoolYearsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchoolYearsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSections" />
+  </wsdl:message>
+  <wsdl:message name="GetSectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRooms" />
+  </wsdl:message>
+  <wsdl:message name="GetRoomsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubjects" />
+  </wsdl:message>
+  <wsdl:message name="GetSubjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSchoolYearSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSchoolYear" />
+  </wsdl:message>
+  <wsdl:message name="InsertSchoolYearSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSchoolYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertRoomSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertRoom" />
+  </wsdl:message>
+  <wsdl:message name="InsertRoomSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSectionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSection" />
+  </wsdl:message>
+  <wsdl:message name="InsertSectionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSubject" />
+  </wsdl:message>
+  <wsdl:message name="InsertSubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSubjectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MaintenanceSoap">
+    <wsdl:operation name="GetSchoolYears">
+      <wsdl:input message="tns:GetSchoolYearsSoapIn" />
+      <wsdl:output message="tns:GetSchoolYearsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSections">
+      <wsdl:input message="tns:GetSectionsSoapIn" />
+      <wsdl:output message="tns:GetSectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <wsdl:input message="tns:GetRoomsSoapIn" />
+      <wsdl:output message="tns:GetRoomsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjects">
+      <wsdl:input message="tns:GetSubjectsSoapIn" />
+      <wsdl:output message="tns:GetSubjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSchoolYear">
+      <wsdl:input message="tns:InsertSchoolYearSoapIn" />
+      <wsdl:output message="tns:InsertSchoolYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoom">
+      <wsdl:input message="tns:InsertRoomSoapIn" />
+      <wsdl:output message="tns:InsertRoomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSection">
+      <wsdl:input message="tns:InsertSectionSoapIn" />
+      <wsdl:output message="tns:InsertSectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubject">
+      <wsdl:input message="tns:InsertSubjectSoapIn" />
+      <wsdl:output message="tns:InsertSubjectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MaintenanceSoap" type="tns:MaintenanceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSchoolYears">
+      <soap:operation soapAction="http://tempuri.org/GetSchoolYears" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSections">
+      <soap:operation soapAction="http://tempuri.org/GetSections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <soap:operation soapAction="http://tempuri.org/GetRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjects">
+      <soap:operation soapAction="http://tempuri.org/GetSubjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSchoolYear">
+      <soap:operation soapAction="http://tempuri.org/InsertSchoolYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoom">
+      <soap:operation soapAction="http://tempuri.org/InsertRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSection">
+      <soap:operation soapAction="http://tempuri.org/InsertSection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubject">
+      <soap:operation soapAction="http://tempuri.org/InsertSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MaintenanceSoap12" type="tns:MaintenanceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSchoolYears">
+      <soap12:operation soapAction="http://tempuri.org/GetSchoolYears" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSections">
+      <soap12:operation soapAction="http://tempuri.org/GetSections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRooms">
+      <soap12:operation soapAction="http://tempuri.org/GetRooms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjects">
+      <soap12:operation soapAction="http://tempuri.org/GetSubjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSchoolYear">
+      <soap12:operation soapAction="http://tempuri.org/InsertSchoolYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoom">
+      <soap12:operation soapAction="http://tempuri.org/InsertRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSection">
+      <soap12:operation soapAction="http://tempuri.org/InsertSection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubject">
+      <soap12:operation soapAction="http://tempuri.org/InsertSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Maintenance">
+    <wsdl:port name="MaintenanceSoap" binding="tns:MaintenanceSoap">
+      <soap:address location="http://localhost/AttendanceChecker/Maintenance.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MaintenanceSoap12" binding="tns:MaintenanceSoap12">
+      <soap12:address location="http://localhost/AttendanceChecker/Maintenance.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
