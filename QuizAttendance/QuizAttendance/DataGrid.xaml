@@ -19,11 +19,11 @@
         <Grid HorizontalAlignment="Left" Height="151" VerticalAlignment="Top" Width="648">
             <TextBlock x:Name="term_textBlock" HorizontalAlignment="Left" Margin="15,21,0,0" TextWrapping="Wrap" Text="Term" VerticalAlignment="Top"/>
             <TextBlock x:Name="schoolYear_textBlock" HorizontalAlignment="Left" Margin="131,19,0,0" TextWrapping="Wrap" Text="School Year" VerticalAlignment="Top"/>
-            <TextBox x:Name="schoolYear_textBox" HorizontalAlignment="Left" Height="24" Margin="197,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+            <TextBox x:Name="schoolYear_textBox" HorizontalAlignment="Left" Height="24" Margin="197,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" TabIndex="1"/>
             <TextBlock x:Name="date_textBlock" HorizontalAlignment="Left" Margin="375,22,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top"/>
             <TextBlock x:Name="room_textBlock" HorizontalAlignment="Left" Margin="15,71,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" RenderTransformOrigin="0.645,0.562"/>
-            <TextBox x:Name="room_textBox" HorizontalAlignment="Left" Height="24" Margin="64,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
-            <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="197,69,0,0" VerticalAlignment="Top" Width="96" SelectedIndex="0">
+            <TextBox x:Name="room_textBox" HorizontalAlignment="Left" Height="24" Margin="64,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" TabIndex="5"/>
+            <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="197,69,0,0" VerticalAlignment="Top" Width="96" SelectedIndex="0" TabIndex="6">
                 <ComboBoxItem>07:30:00</ComboBoxItem>
                 <ComboBoxItem>09:00:00</ComboBoxItem>
                 <ComboBoxItem>10:30:00</ComboBoxItem>
@@ -35,7 +35,7 @@
                 <ComboBoxItem>19:30:00</ComboBoxItem>
             </ComboBox>
             <TextBlock x:Name="startTime_textBlock" HorizontalAlignment="Left" Margin="131,69,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top" RenderTransformOrigin="-0.189,0.562"/>
-            <ComboBox x:Name="endTime_comboBox" HorizontalAlignment="Left" Margin="407,71,0,0" VerticalAlignment="Top" Width="107" SelectedIndex="0">
+            <ComboBox x:Name="endTime_comboBox" HorizontalAlignment="Left" Margin="407,71,0,0" VerticalAlignment="Top" Width="107" SelectedIndex="0" TabIndex="7">
                 <ComboBoxItem>09:00:00</ComboBoxItem>
                 <ComboBoxItem>10:30:00</ComboBoxItem>
                 <ComboBoxItem>12:00:00</ComboBoxItem>
@@ -49,8 +49,8 @@
             <TextBlock x:Name="endTime_textBlock" HorizontalAlignment="Left" Margin="351,71,0,0" TextWrapping="Wrap" Text="End Time" VerticalAlignment="Top"/>
             <TextBox x:Name="subject_textBox" HorizontalAlignment="Left" Height="24" Margin="102,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" IsReadOnly="True"/>
             <TextBlock x:Name="subject_textBlock" HorizontalAlignment="Left" Margin="14,119,0,0" TextWrapping="Wrap" Text="Subject/Section" VerticalAlignment="Top"/>
-            <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="554,115,0,0" VerticalAlignment="Top" Width="84" Height="26" Click="Search_button_Click"/>
-            <ComboBox x:Name="term_comboBox" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top" Width="69" SelectedIndex="0">
+            <Button x:Name="search_button" Content="Search" HorizontalAlignment="Left" Margin="554,115,0,0" VerticalAlignment="Top" Width="84" Height="26" Click="Search_button_Click" TabIndex="8"/>
+            <ComboBox x:Name="term_comboBox" HorizontalAlignment="Left" Margin="46,19,0,0" VerticalAlignment="Top" Width="69" SelectedIndex="0" TabIndex="0">
                 <ComboBoxItem>1Q</ComboBoxItem>
                 <ComboBoxItem>2Q</ComboBoxItem>
                 <ComboBoxItem>3Q</ComboBoxItem>
@@ -58,8 +58,8 @@
             </ComboBox>
             <TextBlock x:Name="schoolYearEx_textBlock" HorizontalAlignment="Left" Margin="197,41,0,0" TextWrapping="Wrap" Text="Ex. 2019-2020" VerticalAlignment="Top" Width="120" FontStyle="Italic" FontSize="10"/>
             <TextBlock x:Name="roomEx_textBlock" HorizontalAlignment="Left" Margin="64,96,0,0" TextWrapping="Wrap" Text="Ex. N101" VerticalAlignment="Top" Width="120" FontStyle="Italic" FontSize="10"/>
-            <Button x:Name="clear_Button" Content="Clear" HorizontalAlignment="Left" Margin="465,114,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="1.2,0.5" Height="27" Click="Clear_Button_Click"/>
-            <ComboBox x:Name="day_comboBox" HorizontalAlignment="Left" Margin="407,24,0,0" VerticalAlignment="Top" Width="45" SelectedIndex="0">
+            <Button x:Name="clear_Button" Content="Clear" HorizontalAlignment="Left" Margin="465,114,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="1.2,0.5" Height="27" Click="Clear_Button_Click" TabIndex="9"/>
+            <ComboBox x:Name="day_comboBox" HorizontalAlignment="Left" Margin="407,24,0,0" VerticalAlignment="Top" Width="45" SelectedIndex="0" TabIndex="2">
                 <ComboBoxItem>01</ComboBoxItem>
                 <ComboBoxItem>02</ComboBoxItem>
                 <ComboBoxItem>03</ComboBoxItem>
@@ -92,7 +92,7 @@
                 <ComboBoxItem>30</ComboBoxItem>
                 <ComboBoxItem>31</ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="month_comboBox" HorizontalAlignment="Left" Margin="467,24,0,0" VerticalAlignment="Top" Width="47" SelectedIndex="0">
+            <ComboBox x:Name="month_comboBox" HorizontalAlignment="Left" Margin="467,24,0,0" VerticalAlignment="Top" Width="47" SelectedIndex="0" TabIndex="3">
                 <ComboBoxItem>01</ComboBoxItem>
                 <ComboBoxItem>02</ComboBoxItem>
                 <ComboBoxItem>03</ComboBoxItem>
@@ -110,7 +110,7 @@
             <TextBlock x:Name="day_textBlock" HorizontalAlignment="Left" Margin="407,51,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" Width="45" FontStyle="Italic" FontSize="10"/>
             <TextBlock x:Name="month_textBlock" HorizontalAlignment="Left" Margin="469,51,0,0" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Width="45" FontStyle="Italic" FontSize="10"/>
             <TextBlock x:Name="year_textBlock" HorizontalAlignment="Left" Margin="532,51,0,0" TextWrapping="Wrap" Text="Year Ex. 2020" VerticalAlignment="Top" Width="68" FontStyle="Italic" FontSize="10"/>
-            <TextBox x:Name="year_textBox" HorizontalAlignment="Left" Height="22" Margin="532,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41"/>
+            <TextBox x:Name="year_textBox" HorizontalAlignment="Left" Height="22" Margin="532,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" TabIndex="4"/>
         </Grid>
 
     </Grid>

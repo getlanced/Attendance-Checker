@@ -63,7 +63,6 @@ namespace QuizAttendance
                     a.UpdateAttendanceRecord(
                         date,
                         l.studNum,
-                        l.studName,
                         l.studAtt
                         );
                     a.InsertToAttendanceRecord(
@@ -72,7 +71,6 @@ namespace QuizAttendance
                         subSec_textBox.Text,
                         date,
                         l.studNum,
-                        l.studName,
                         l.studAtt
                         );
                 }
