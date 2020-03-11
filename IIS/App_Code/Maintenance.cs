@@ -167,4 +167,48 @@ public class Maintenance : System.Web.Services.WebService
         cmd.ExecuteNonQuery();
         conn.Close();
     }
+	
+	[WebMethod]
+	public List<Class> GetClassRecord()
+	{
+		var classRec = new List<Class>();
+		
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("GetClassRecord", conn);
+		
+        conn.Open();
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        var dataAdapter = new SqlDataAdapter(cmd);
+        var dt = new DataTable();
+        dataAdapter.Fill(dt);
+        foreach (DataRow dr in dt.Rows)
+        {
+			var c = new Class();
+            c.roomName = dr["RoomName"].ToString();
+			c.subName = dr["SubjectName"].ToString();
+			c.sectName = dr["SectionName"].ToString();
+			c.yearName = dr["YearName"].ToString();
+			c.termName = dr["TermName"].ToString();
+			c.startTime = dr["StartTime"].ToString();
+			c.endTime = dr["EndTime"].ToString();
+			
+			classRec.Add(c);
+			c = null;
+        }
+
+        conn.Close();
+        return classRec;
+	}
+	
+	public class Class
+	{
+		public string roomName {get; set;}
+		public string subName {get; set;}
+		public string sectName {get; set;}
+		public string yearName {get; set;}
+		public string termName {get; set;}
+		public string startTime {get; set;}
+		public string endTime {get; set;}
+	}
 }
