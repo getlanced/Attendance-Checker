@@ -25,6 +25,7 @@ namespace QuizAttendance
             InitializeComponent();
             Main.NavigationService.Navigate(new DataGrid());
             main_button.IsEnabled = false;
+            
         }
 
 
@@ -35,6 +36,7 @@ namespace QuizAttendance
             remove_button.IsEnabled = true;
             edit_button.IsEnabled = true;
             maintenance1.IsEnabled = true;
+            addClass_button.IsEnabled = true;
         }
 
         private void remove_click(object sender, RoutedEventArgs e)
@@ -44,6 +46,7 @@ namespace QuizAttendance
             remove_button.IsEnabled = false;
             edit_button.IsEnabled = true;
             maintenance1.IsEnabled = true;
+            addClass_button.IsEnabled = true;
         }
 
         private void edit_click(object sender, RoutedEventArgs e)
@@ -53,6 +56,7 @@ namespace QuizAttendance
             remove_button.IsEnabled = true;
             edit_button.IsEnabled = false;
             maintenance1.IsEnabled = true;
+            addClass_button.IsEnabled = true;
         }
 
         private void Maintenance1_Click(object sender, RoutedEventArgs e)
@@ -62,6 +66,17 @@ namespace QuizAttendance
             remove_button.IsEnabled = true;
             edit_button.IsEnabled = true;
             maintenance1.IsEnabled = false;
+            addClass_button.IsEnabled = true;
+        }
+
+        private void AddClass_button_Click(object sender, RoutedEventArgs e)
+        {
+            Main.NavigationService.Navigate(new AddClass());
+            main_button.IsEnabled = true;
+            remove_button.IsEnabled = true;
+            edit_button.IsEnabled = true;
+            maintenance1.IsEnabled = true;
+            addClass_button.IsEnabled = false;
         }
     }
 }

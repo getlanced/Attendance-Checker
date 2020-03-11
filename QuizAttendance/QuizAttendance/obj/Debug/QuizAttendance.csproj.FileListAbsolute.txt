@@ -79,3 +79,7 @@ D:\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\QuizAttendance.csp
 D:\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\QuizAttendance.csproj.CoreCompileInputs.cache
 D:\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\maintenance.g.cs
 D:\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\maintenance.baml
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\maintenance.g.cs
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\maintenance.baml
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\AddClass.g.cs
+C:\Users\Administrator\Source\Repos\getlanced\Attendance-Checker\QuizAttendance\QuizAttendance\obj\Debug\AddClass.baml

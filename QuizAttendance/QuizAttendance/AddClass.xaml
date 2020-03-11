@@ -1,0 +1,64 @@
+﻿<Page x:Class="QuizAttendance.AddClass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizAttendance"
+      mc:Ignorable="d" 
+      d:DesignHeight="621" d:DesignWidth="648"
+      Title="AddClass">
+
+    <Grid Background="White">
+        <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="648" Background="#FF938383">
+            <TextBlock x:Name="addClass_textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Add Class" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontStyle="Italic" Width="224"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="52" Margin="10,55,0,0" VerticalAlignment="Top" Width="190">
+            <TextBlock x:Name="term_textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Term" VerticalAlignment="Top" Width="69" Height="23"/>
+            <ComboBox x:Name="term_comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" SelectedIndex="0" TabIndex="0" Height="23">
+                <ComboBoxItem Content="1Q"/>
+                <ComboBoxItem Content="2Q"/>
+                <ComboBoxItem Content="3Q"/>
+                <ComboBoxItem Content="4Q"/>
+            </ComboBox>
+        </StackPanel>
+        <TextBlock x:Name="year_textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Margin="10,85,0,0" Height="23" Width="70"/>
+        <ComboBox x:Name="year_comboBox" HorizontalAlignment="Left" Margin="80,85,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="Year_comboBox_DropDownOpened"/>
+        <Button x:Name="list_subjects_button" Content="List Subjects" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Width="190" Click="List_subjects_button_Click"/>
+        <ListView x:Name="subjects_listView" HorizontalAlignment="Left" Height="148" Margin="10,137,0,0" VerticalAlignment="Top" Width="190" PreviewMouseLeftButtonUp="ListView_PreviewMouseLeftButtonUp" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="available_section_textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Available Section" VerticalAlignment="Top" Margin="10,290,0,0" Height="23" Width="90"/>
+        <ComboBox x:Name="section_comboBox" HorizontalAlignment="Left" Margin="105,290,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBlock x:Name="availableRooms_textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Available Room" VerticalAlignment="Top" Margin="10,364,0,0" Height="23" Width="90"/>
+        <ComboBox x:Name="availableRooms_comboBox" HorizontalAlignment="Left" Margin="105,364,0,0" VerticalAlignment="Top" Width="95" DropDownOpened="AvailableRooms_comboBox_DropDownOpened"/>
+        <TextBlock x:Name="selectPeriodNumber_textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="No. of Period/s" VerticalAlignment="Top" Margin="10,313,0,0" Height="23" Width="90"/>
+        <ComboBox x:Name="period_comboBox" HorizontalAlignment="Left" Margin="105,314,0,0" VerticalAlignment="Top" Width="95" SelectedIndex="0" DropDownClosed="Period_comboBox_DropDownClosed">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+        </ComboBox>
+        <ComboBox x:Name="startTime_comboBox" HorizontalAlignment="Left" Margin="105,338,0,0" VerticalAlignment="Top" Width="95" SelectedIndex="0">
+            <ComboBoxItem Content="07:30:00"/>
+            <ComboBoxItem Content="09:00:00"/>
+            <ComboBoxItem Content="10:30:00"/>
+            <ComboBoxItem Content="12:00:00"/>
+            <ComboBoxItem Content="13:30:00"/>
+            <ComboBoxItem Content="15:00:00"/>
+            <ComboBoxItem Content="16:30:00"/>
+            <ComboBoxItem Content="18:00:00"/>
+            <ComboBoxItem Content="19:30:00"/>
+        </ComboBox>
+        <TextBlock x:Name="startTime_textBlock" HorizontalAlignment="Left" Margin="10,338,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top" Height="23" Width="90"/>
+        <Button x:Name="add_class_button" Content="Add Class" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="190" Click="Add_class_button_Click"/>
+    </Grid>
+</Page>

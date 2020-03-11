@@ -11,10 +11,11 @@
         <Grid HorizontalAlignment="Left" Height="631" Margin="648,0,0,0" VerticalAlignment="Top" Width="112" Background="#FF938383">
             <Button x:Name="main_button" Content="ROOM" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="main_Click"/>
             <Button x:Name="remove_button" Content="STUDENT" HorizontalAlignment="Left" Margin="0,161,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="remove_click"/>
-            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,73,0,0" TextWrapping="Wrap" Text="Functions" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock x:Name="searchFunctions_textBlock" HorizontalAlignment="Left" Margin="10,46,0,0" TextWrapping="Wrap" Text="Search Functions" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic"/>
             <Button x:Name="edit_button" Content="ATTENDANCE" HorizontalAlignment="Left" Margin="0,221,0,0" VerticalAlignment="Top" Width="112" Height="42" Click="edit_click"/>
-            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="6,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic" Text="Maintenance"/>
+            <TextBlock x:Name="maintenance_textBlock" HorizontalAlignment="Left" Margin="6,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontStyle="Italic" Text="Maintenance"/>
             <Button x:Name="maintenance1" Content="Testu" HorizontalAlignment="Left" Margin="0,335,-2,0" VerticalAlignment="Top" Width="114" Height="33" Click="Maintenance1_Click"/>
+            <Button x:Name="addClass_button" Content="Add Class" HorizontalAlignment="Left" Margin="0,385,-2,0" VerticalAlignment="Top" Width="114" Height="33" Click="AddClass_button_Click"/>
         </Grid>
 
     </Grid>
