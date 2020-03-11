@@ -72,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="maintenance.xaml.cs">
+      <DependentUpon>maintenance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="studentSearch.xaml.cs">
       <DependentUpon>studentSearch.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="maintenance.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +132,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Connected Services\ListEnrolledStudents\ListEnrolledStudents.wsdl" />
+    <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.CheckExistingRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ListEnrolledStudents\QuizAttendance.ListEnrolledStudents.InsertToAttendanceRecordResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -163,13 +173,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ListEnrolledStudents\ListEnrolledStudents.disco" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ListEnrolledStudents\" />
@@ -205,6 +214,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ListEnrolledStudents\ListEnrolledStudents.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ListEnrolledStudents\configuration91.svcinfo" />
