@@ -22,6 +22,67 @@ namespace QuizAttendance.Maintenance {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Student", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Student : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string studNumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string fullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fullNameField, value) != true)) {
+                    this.fullNameField = value;
+                    this.RaisePropertyChanged("fullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string studNum {
+            get {
+                return this.studNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.studNumField, value) != true)) {
+                    this.studNumField = value;
+                    this.RaisePropertyChanged("studNum");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Class", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Class : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -193,6 +254,13 @@ namespace QuizAttendance.Maintenance {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSubjects", ReplyAction="*")]
         System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetSubjectsResponse> GetSubjectsAsync(QuizAttendance.Maintenance.GetSubjectsRequest request);
         
+        // CODEGEN: Generating message contract since element name GetStudentsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStudents", ReplyAction="*")]
+        QuizAttendance.Maintenance.GetStudentsResponse GetStudents(QuizAttendance.Maintenance.GetStudentsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetStudents", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetStudentsResponse> GetStudentsAsync(QuizAttendance.Maintenance.GetStudentsRequest request);
+        
         // CODEGEN: Generating message contract since element name SY from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertSchoolYear", ReplyAction="*")]
         QuizAttendance.Maintenance.InsertSchoolYearResponse InsertSchoolYear(QuizAttendance.Maintenance.InsertSchoolYearRequest request);
@@ -220,6 +288,13 @@ namespace QuizAttendance.Maintenance {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertSubject", ReplyAction="*")]
         System.Threading.Tasks.Task<QuizAttendance.Maintenance.InsertSubjectResponse> InsertSubjectAsync(QuizAttendance.Maintenance.InsertSubjectRequest request);
+        
+        // CODEGEN: Generating message contract since element name LName from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertStudent", ReplyAction="*")]
+        QuizAttendance.Maintenance.InsertStudentResponse InsertStudent(QuizAttendance.Maintenance.InsertStudentRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertStudent", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.InsertStudentResponse> InsertStudentAsync(QuizAttendance.Maintenance.InsertStudentRequest request);
         
         // CODEGEN: Generating message contract since element name Sub from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSubject", ReplyAction="*")]
@@ -505,6 +580,67 @@ namespace QuizAttendance.Maintenance {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStudentsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStudents", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.GetStudentsRequestBody Body;
+        
+        public GetStudentsRequest() {
+        }
+        
+        public GetStudentsRequest(QuizAttendance.Maintenance.GetStudentsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetStudentsRequestBody {
+        
+        public GetStudentsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetStudentsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStudentsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.GetStudentsResponseBody Body;
+        
+        public GetStudentsResponse() {
+        }
+        
+        public GetStudentsResponse(QuizAttendance.Maintenance.GetStudentsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetStudentsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public QuizAttendance.Maintenance.Student[] GetStudentsResult;
+        
+        public GetStudentsResponseBody() {
+        }
+        
+        public GetStudentsResponseBody(QuizAttendance.Maintenance.Student[] GetStudentsResult) {
+            this.GetStudentsResult = GetStudentsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class InsertSchoolYearRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertSchoolYear", Namespace="http://tempuri.org/", Order=0)]
@@ -742,6 +878,79 @@ namespace QuizAttendance.Maintenance {
     public partial class InsertSubjectResponseBody {
         
         public InsertSubjectResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertStudentRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertStudent", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.InsertStudentRequestBody Body;
+        
+        public InsertStudentRequest() {
+        }
+        
+        public InsertStudentRequest(QuizAttendance.Maintenance.InsertStudentRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class InsertStudentRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string LName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string GName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string MInitial;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string StudNum;
+        
+        public InsertStudentRequestBody() {
+        }
+        
+        public InsertStudentRequestBody(string LName, string GName, string MInitial, string StudNum) {
+            this.LName = LName;
+            this.GName = GName;
+            this.MInitial = MInitial;
+            this.StudNum = StudNum;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertStudentResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertStudentResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.InsertStudentResponseBody Body;
+        
+        public InsertStudentResponse() {
+        }
+        
+        public InsertStudentResponse(QuizAttendance.Maintenance.InsertStudentResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class InsertStudentResponseBody {
+        
+        public InsertStudentResponseBody() {
         }
     }
     
@@ -1170,6 +1379,29 @@ namespace QuizAttendance.Maintenance {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.GetStudentsResponse QuizAttendance.Maintenance.MaintenanceSoap.GetStudents(QuizAttendance.Maintenance.GetStudentsRequest request) {
+            return base.Channel.GetStudents(request);
+        }
+        
+        public QuizAttendance.Maintenance.Student[] GetStudents() {
+            QuizAttendance.Maintenance.GetStudentsRequest inValue = new QuizAttendance.Maintenance.GetStudentsRequest();
+            inValue.Body = new QuizAttendance.Maintenance.GetStudentsRequestBody();
+            QuizAttendance.Maintenance.GetStudentsResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).GetStudents(inValue);
+            return retVal.Body.GetStudentsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetStudentsResponse> QuizAttendance.Maintenance.MaintenanceSoap.GetStudentsAsync(QuizAttendance.Maintenance.GetStudentsRequest request) {
+            return base.Channel.GetStudentsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetStudentsResponse> GetStudentsAsync() {
+            QuizAttendance.Maintenance.GetStudentsRequest inValue = new QuizAttendance.Maintenance.GetStudentsRequest();
+            inValue.Body = new QuizAttendance.Maintenance.GetStudentsRequestBody();
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).GetStudentsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         QuizAttendance.Maintenance.InsertSchoolYearResponse QuizAttendance.Maintenance.MaintenanceSoap.InsertSchoolYear(QuizAttendance.Maintenance.InsertSchoolYearRequest request) {
             return base.Channel.InsertSchoolYear(request);
         }
@@ -1263,6 +1495,36 @@ namespace QuizAttendance.Maintenance {
             inValue.Body = new QuizAttendance.Maintenance.InsertSubjectRequestBody();
             inValue.Body.Sub = Sub;
             return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).InsertSubjectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.InsertStudentResponse QuizAttendance.Maintenance.MaintenanceSoap.InsertStudent(QuizAttendance.Maintenance.InsertStudentRequest request) {
+            return base.Channel.InsertStudent(request);
+        }
+        
+        public void InsertStudent(string LName, string GName, string MInitial, string StudNum) {
+            QuizAttendance.Maintenance.InsertStudentRequest inValue = new QuizAttendance.Maintenance.InsertStudentRequest();
+            inValue.Body = new QuizAttendance.Maintenance.InsertStudentRequestBody();
+            inValue.Body.LName = LName;
+            inValue.Body.GName = GName;
+            inValue.Body.MInitial = MInitial;
+            inValue.Body.StudNum = StudNum;
+            QuizAttendance.Maintenance.InsertStudentResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).InsertStudent(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.InsertStudentResponse> QuizAttendance.Maintenance.MaintenanceSoap.InsertStudentAsync(QuizAttendance.Maintenance.InsertStudentRequest request) {
+            return base.Channel.InsertStudentAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.InsertStudentResponse> InsertStudentAsync(string LName, string GName, string MInitial, string StudNum) {
+            QuizAttendance.Maintenance.InsertStudentRequest inValue = new QuizAttendance.Maintenance.InsertStudentRequest();
+            inValue.Body = new QuizAttendance.Maintenance.InsertStudentRequestBody();
+            inValue.Body.LName = LName;
+            inValue.Body.GName = GName;
+            inValue.Body.MInitial = MInitial;
+            inValue.Body.StudNum = StudNum;
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).InsertStudentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

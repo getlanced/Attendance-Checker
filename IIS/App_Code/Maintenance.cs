@@ -117,9 +117,9 @@ public class Maintenance : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public List<string> GetStudents()
+    public List<Student> GetStudents()
     {
-        var arr = new List<string>();
+        var arr = new List<Student>();
 
         var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
         var cmd = new SqlCommand("GetStudents", conn);
@@ -132,7 +132,10 @@ public class Maintenance : System.Web.Services.WebService
         dataAdapter.Fill(dt);
         foreach (DataRow dr in dt.Rows)
         {
-            arr.Add(dr["SubjectName"].ToString());
+            var a = new Student();
+            a.studNum = dr["StudentNumber"].ToString();
+            a.fullName = string.Format("{0},{1},{2}",dr["LastName"].ToString(),dr["GivenName"].ToString(),dr["MiddleInitial"].ToString());
+            arr.Add(a);
         }
 
         conn.Close();
@@ -186,6 +189,22 @@ public class Maintenance : System.Web.Services.WebService
 
         conn.Open();
         cmd.Parameters.Add("@Subject", SqlDbType.NVarChar, 15).Value = Sub;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
+    public void InsertStudent(string LName, string GName, string MInitial, string StudNum)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("InsertStudent", conn);
+
+        conn.Open();
+        cmd.Parameters.Add("@LName", SqlDbType.NVarChar, 50).Value = LName;
+        cmd.Parameters.Add("@GName", SqlDbType.NVarChar, 50).Value = GName;
+        cmd.Parameters.Add("@MInitial", SqlDbType.NVarChar, 5).Value = MInitial;
+        cmd.Parameters.Add("@StudNum", SqlDbType.Char, 10).Value = StudNum;
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.ExecuteNonQuery();
         conn.Close();
@@ -286,4 +305,10 @@ public class Maintenance : System.Web.Services.WebService
 		public string startTime {get; set;}
 		public string endTime {get; set;}
 	}
+
+    public class Student
+    {
+        public string fullName;
+        public string studNum;
+    }
 }

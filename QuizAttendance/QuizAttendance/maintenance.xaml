@@ -15,10 +15,19 @@
             <Button x:Name="Room" Content="Room" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,243,0,0" Height="28" Click="Room_Click"/>
             <Button x:Name="SchoolYear" Content="School Year" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,197,0,0" Height="28" Click="SchoolYear_Click"/>
             <Button x:Name="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,341,0,0" Height="28" Click="Subject_Click" Content="Subject"/>
-            <Button x:Name="AddEntry" Content="Add" HorizontalAlignment="Left" Margin="32,60,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="AddEntry_Click"/>
-            <TextBox x:Name="Entry" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
-            <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="32,104,0,0" VerticalAlignment="Top" Width="102" Height="24" Click="Delete_Click"/>
-            <Button x:Name="Students" Content="Students" HorizontalAlignment="Left" Height="30" Margin="32,392,0,0" VerticalAlignment="Top" Width="102"/>
+            <Button x:Name="AddEntry" Content="Add" HorizontalAlignment="Left" Margin="32,60,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="AddEntry_Click" d:IsHidden="True"/>
+            <TextBox x:Name="Entry" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" d:IsHidden="True"/>
+            <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="32,104,0,0" VerticalAlignment="Top" Width="102" Height="24" Click="Delete_Click" d:IsHidden="True"/>
+            <Button x:Name="Students" Content="Students" HorizontalAlignment="Left" Height="30" Margin="32,392,0,0" VerticalAlignment="Top" Width="102" Click="Students_Click"/>
+            <Button x:Name="AddStudButton" Content="Add Student" HorizontalAlignment="Left" Height="27" Margin="32,41,0,0" VerticalAlignment="Top" Width="114" Click="AddStudButton_Click"/>
+            <Label x:Name="gnLabel" Content="Given Name" HorizontalAlignment="Left" Margin="171,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.588,0.945" Height="39" Width="90"/>
+            <TextBox x:Name="gnEntry" HorizontalAlignment="Left" Height="24" Margin="171,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+            <Label x:Name="lnLabel" Content="Last Name" HorizontalAlignment="Left" Margin="171,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.588,0.945" Height="34" Width="90"/>
+            <TextBox x:Name="lnEntry" HorizontalAlignment="Left" Height="25" Margin="171,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+            <Label x:Name="miLabel" Content="Middle Initial" HorizontalAlignment="Left" Margin="171,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.588,0.945" Height="35" Width="90"/>
+            <TextBox x:Name="miEntry" HorizontalAlignment="Left" Height="25" Margin="171,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+            <Label x:Name="snLabel" Content="Student Number" HorizontalAlignment="Left" Margin="393,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.588,0.945" Height="39" Width="107"/>
+            <TextBox x:Name="snEntry" HorizontalAlignment="Left" Height="24" Margin="394,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
         </Grid>
 
     </Grid>

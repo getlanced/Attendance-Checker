@@ -47,6 +47,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetStudents">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStudentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentsResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Student" nillable="true" type="tns:Student" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Student">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="fullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="studNum" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="InsertSchoolYear">
         <s:complexType>
           <s:sequence>
@@ -85,6 +106,19 @@
         </s:complexType>
       </s:element>
       <s:element name="InsertSubjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MInitial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StudNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertStudentResponse">
         <s:complexType />
       </s:element>
       <s:element name="DeleteSubject">
@@ -179,6 +213,12 @@
   <wsdl:message name="GetSubjectsSoapOut">
     <wsdl:part name="parameters" element="tns:GetSubjectsResponse" />
   </wsdl:message>
+  <wsdl:message name="GetStudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudents" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertSchoolYearSoapIn">
     <wsdl:part name="parameters" element="tns:InsertSchoolYear" />
   </wsdl:message>
@@ -202,6 +242,12 @@
   </wsdl:message>
   <wsdl:message name="InsertSubjectSoapOut">
     <wsdl:part name="parameters" element="tns:InsertSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertStudent" />
+  </wsdl:message>
+  <wsdl:message name="InsertStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertStudentResponse" />
   </wsdl:message>
   <wsdl:message name="DeleteSubjectSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteSubject" />
@@ -250,6 +296,10 @@
       <wsdl:input message="tns:GetSubjectsSoapIn" />
       <wsdl:output message="tns:GetSubjectsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <wsdl:input message="tns:GetStudentsSoapIn" />
+      <wsdl:output message="tns:GetStudentsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertSchoolYear">
       <wsdl:input message="tns:InsertSchoolYearSoapIn" />
       <wsdl:output message="tns:InsertSchoolYearSoapOut" />
@@ -265,6 +315,10 @@
     <wsdl:operation name="InsertSubject">
       <wsdl:input message="tns:InsertSubjectSoapIn" />
       <wsdl:output message="tns:InsertSubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertStudent">
+      <wsdl:input message="tns:InsertStudentSoapIn" />
+      <wsdl:output message="tns:InsertStudentSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteSubject">
       <wsdl:input message="tns:DeleteSubjectSoapIn" />
@@ -325,6 +379,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <soap:operation soapAction="http://tempuri.org/GetStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertSchoolYear">
       <soap:operation soapAction="http://tempuri.org/InsertSchoolYear" style="document" />
       <wsdl:input>
@@ -354,6 +417,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertSubject">
       <soap:operation soapAction="http://tempuri.org/InsertSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertStudent">
+      <soap:operation soapAction="http://tempuri.org/InsertStudent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -445,6 +517,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <soap12:operation soapAction="http://tempuri.org/GetStudents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertSchoolYear">
       <soap12:operation soapAction="http://tempuri.org/InsertSchoolYear" style="document" />
       <wsdl:input>
@@ -474,6 +555,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertSubject">
       <soap12:operation soapAction="http://tempuri.org/InsertSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertStudent">
+      <soap12:operation soapAction="http://tempuri.org/InsertStudent" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

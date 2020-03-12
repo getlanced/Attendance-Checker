@@ -197,6 +197,9 @@
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.GetSectionsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.GetStudentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.GetSubjectsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -212,7 +215,13 @@
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.InsertSectionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.InsertStudentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.InsertSubjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\StudentSearchWebService\QuizAttendance.StudentSearchWebService.HelloWorldResponse.datasource">
