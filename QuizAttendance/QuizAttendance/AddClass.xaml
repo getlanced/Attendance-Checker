@@ -60,5 +60,18 @@
         </ComboBox>
         <TextBlock x:Name="startTime_textBlock" HorizontalAlignment="Left" Margin="10,338,0,0" TextWrapping="Wrap" Text="Start Time" VerticalAlignment="Top" Height="23" Width="90"/>
         <Button x:Name="add_class_button" Content="Add Class" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="190" Click="Add_class_button_Click"/>
+        <DataGrid x:Name="classRecord_dataGrid" HorizontalAlignment="Left" Height="334" Margin="205,78,0,0" VerticalAlignment="Top" Width="433">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room" IsReadOnly="True" Binding="{Binding roomName}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Subject" IsReadOnly="True" Binding="{Binding subName}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Section" IsReadOnly="True" Binding="{Binding sectName}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Year" IsReadOnly="True" Binding="{Binding yearName}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Term" IsReadOnly="True" Binding="{Binding termName}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="StartTime" IsReadOnly="True" Binding="{Binding startTime}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="EndTime" IsReadOnly="True" Binding="{Binding endTime}" Width="80"></DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="class_textBlock" HorizontalAlignment="Left" Margin="205,55,0,0" TextWrapping="Wrap" Text="Classes" VerticalAlignment="Top" Height="23" Width="40"/>
     </Grid>
 </Page>

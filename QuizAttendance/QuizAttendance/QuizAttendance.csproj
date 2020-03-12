@@ -188,6 +188,9 @@
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.GetSubjectsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.InsertClassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.InsertRoomResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
