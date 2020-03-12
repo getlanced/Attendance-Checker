@@ -117,6 +117,29 @@ public class Maintenance : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public List<string> GetStudents()
+    {
+        var arr = new List<string>();
+
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("GetStudents", conn);
+
+        conn.Open();
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        var dataAdapter = new SqlDataAdapter(cmd);
+        var dt = new DataTable();
+        dataAdapter.Fill(dt);
+        foreach (DataRow dr in dt.Rows)
+        {
+            arr.Add(dr["SubjectName"].ToString());
+        }
+
+        conn.Close();
+        return arr;
+    }
+
+    [WebMethod]
     public void InsertSchoolYear(string SY)
     {
         var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
@@ -167,8 +190,60 @@ public class Maintenance : System.Web.Services.WebService
         cmd.ExecuteNonQuery();
         conn.Close();
     }
-	
-	[WebMethod]
+
+    [WebMethod]
+    public void DeleteSubject(string Sub)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("DeleteSubject", conn);
+
+        conn.Open();
+        cmd.Parameters.Add("@Subject", SqlDbType.NVarChar, 15).Value = Sub;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
+    public void DeleteSection(string Sec)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("DeleteSection", conn);
+
+        conn.Open();
+        cmd.Parameters.Add("@Section", SqlDbType.NVarChar, 5).Value = Sec;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
+    public void DeleteRoom(string R)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("DeleteRoom", conn);
+
+        conn.Open();
+        cmd.Parameters.Add("@Room", SqlDbType.NVarChar, 10).Value = R;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
+    public void DeleteSchoolYear(string SY)
+    {
+        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("DeleteSchoolYear", conn);
+
+        conn.Open();
+        cmd.Parameters.Add("@Year", SqlDbType.NChar, 9).Value = SY;
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    [WebMethod]
 	public List<Class> GetClassRecord()
 	{
 		var classRec = new List<Class>();

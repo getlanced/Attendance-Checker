@@ -20,6 +20,147 @@ namespace QuizAttendance.Maintenance {
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Class", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Class : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string roomNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string subNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sectNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string yearNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string termNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string startTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string endTimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string roomName {
+            get {
+                return this.roomNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.roomNameField, value) != true)) {
+                    this.roomNameField = value;
+                    this.RaisePropertyChanged("roomName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string subName {
+            get {
+                return this.subNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.subNameField, value) != true)) {
+                    this.subNameField = value;
+                    this.RaisePropertyChanged("subName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string sectName {
+            get {
+                return this.sectNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sectNameField, value) != true)) {
+                    this.sectNameField = value;
+                    this.RaisePropertyChanged("sectName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string yearName {
+            get {
+                return this.yearNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.yearNameField, value) != true)) {
+                    this.yearNameField = value;
+                    this.RaisePropertyChanged("yearName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string termName {
+            get {
+                return this.termNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.termNameField, value) != true)) {
+                    this.termNameField = value;
+                    this.RaisePropertyChanged("termName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string startTime {
+            get {
+                return this.startTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.startTimeField, value) != true)) {
+                    this.startTimeField = value;
+                    this.RaisePropertyChanged("startTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string endTime {
+            get {
+                return this.endTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.endTimeField, value) != true)) {
+                    this.endTimeField = value;
+                    this.RaisePropertyChanged("endTime");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Maintenance.MaintenanceSoap")]
     public interface MaintenanceSoap {
@@ -79,6 +220,41 @@ namespace QuizAttendance.Maintenance {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertSubject", ReplyAction="*")]
         System.Threading.Tasks.Task<QuizAttendance.Maintenance.InsertSubjectResponse> InsertSubjectAsync(QuizAttendance.Maintenance.InsertSubjectRequest request);
+        
+        // CODEGEN: Generating message contract since element name Sub from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSubject", ReplyAction="*")]
+        QuizAttendance.Maintenance.DeleteSubjectResponse DeleteSubject(QuizAttendance.Maintenance.DeleteSubjectRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSubject", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSubjectResponse> DeleteSubjectAsync(QuizAttendance.Maintenance.DeleteSubjectRequest request);
+        
+        // CODEGEN: Generating message contract since element name Sec from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSection", ReplyAction="*")]
+        QuizAttendance.Maintenance.DeleteSectionResponse DeleteSection(QuizAttendance.Maintenance.DeleteSectionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSection", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSectionResponse> DeleteSectionAsync(QuizAttendance.Maintenance.DeleteSectionRequest request);
+        
+        // CODEGEN: Generating message contract since element name R from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteRoom", ReplyAction="*")]
+        QuizAttendance.Maintenance.DeleteRoomResponse DeleteRoom(QuizAttendance.Maintenance.DeleteRoomRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteRoom", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteRoomResponse> DeleteRoomAsync(QuizAttendance.Maintenance.DeleteRoomRequest request);
+        
+        // CODEGEN: Generating message contract since element name SY from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSchoolYear", ReplyAction="*")]
+        QuizAttendance.Maintenance.DeleteSchoolYearResponse DeleteSchoolYear(QuizAttendance.Maintenance.DeleteSchoolYearRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSchoolYear", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSchoolYearResponse> DeleteSchoolYearAsync(QuizAttendance.Maintenance.DeleteSchoolYearRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetClassRecordResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetClassRecord", ReplyAction="*")]
+        QuizAttendance.Maintenance.GetClassRecordResponse GetClassRecord(QuizAttendance.Maintenance.GetClassRecordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetClassRecord", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetClassRecordResponse> GetClassRecordAsync(QuizAttendance.Maintenance.GetClassRecordRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -569,6 +745,311 @@ namespace QuizAttendance.Maintenance {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSubjectRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSubject", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSubjectRequestBody Body;
+        
+        public DeleteSubjectRequest() {
+        }
+        
+        public DeleteSubjectRequest(QuizAttendance.Maintenance.DeleteSubjectRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteSubjectRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Sub;
+        
+        public DeleteSubjectRequestBody() {
+        }
+        
+        public DeleteSubjectRequestBody(string Sub) {
+            this.Sub = Sub;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSubjectResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSubjectResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSubjectResponseBody Body;
+        
+        public DeleteSubjectResponse() {
+        }
+        
+        public DeleteSubjectResponse(QuizAttendance.Maintenance.DeleteSubjectResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteSubjectResponseBody {
+        
+        public DeleteSubjectResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSectionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSection", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSectionRequestBody Body;
+        
+        public DeleteSectionRequest() {
+        }
+        
+        public DeleteSectionRequest(QuizAttendance.Maintenance.DeleteSectionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteSectionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Sec;
+        
+        public DeleteSectionRequestBody() {
+        }
+        
+        public DeleteSectionRequestBody(string Sec) {
+            this.Sec = Sec;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSectionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSectionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSectionResponseBody Body;
+        
+        public DeleteSectionResponse() {
+        }
+        
+        public DeleteSectionResponse(QuizAttendance.Maintenance.DeleteSectionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteSectionResponseBody {
+        
+        public DeleteSectionResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteRoomRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteRoom", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteRoomRequestBody Body;
+        
+        public DeleteRoomRequest() {
+        }
+        
+        public DeleteRoomRequest(QuizAttendance.Maintenance.DeleteRoomRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteRoomRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string R;
+        
+        public DeleteRoomRequestBody() {
+        }
+        
+        public DeleteRoomRequestBody(string R) {
+            this.R = R;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteRoomResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteRoomResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteRoomResponseBody Body;
+        
+        public DeleteRoomResponse() {
+        }
+        
+        public DeleteRoomResponse(QuizAttendance.Maintenance.DeleteRoomResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteRoomResponseBody {
+        
+        public DeleteRoomResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSchoolYearRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSchoolYear", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSchoolYearRequestBody Body;
+        
+        public DeleteSchoolYearRequest() {
+        }
+        
+        public DeleteSchoolYearRequest(QuizAttendance.Maintenance.DeleteSchoolYearRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class DeleteSchoolYearRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SY;
+        
+        public DeleteSchoolYearRequestBody() {
+        }
+        
+        public DeleteSchoolYearRequestBody(string SY) {
+            this.SY = SY;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteSchoolYearResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteSchoolYearResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.DeleteSchoolYearResponseBody Body;
+        
+        public DeleteSchoolYearResponse() {
+        }
+        
+        public DeleteSchoolYearResponse(QuizAttendance.Maintenance.DeleteSchoolYearResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class DeleteSchoolYearResponseBody {
+        
+        public DeleteSchoolYearResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClassRecordRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClassRecord", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.GetClassRecordRequestBody Body;
+        
+        public GetClassRecordRequest() {
+        }
+        
+        public GetClassRecordRequest(QuizAttendance.Maintenance.GetClassRecordRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetClassRecordRequestBody {
+        
+        public GetClassRecordRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetClassRecordResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetClassRecordResponse", Namespace="http://tempuri.org/", Order=0)]
+        public QuizAttendance.Maintenance.GetClassRecordResponseBody Body;
+        
+        public GetClassRecordResponse() {
+        }
+        
+        public GetClassRecordResponse(QuizAttendance.Maintenance.GetClassRecordResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetClassRecordResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public QuizAttendance.Maintenance.Class[] GetClassRecordResult;
+        
+        public GetClassRecordResponseBody() {
+        }
+        
+        public GetClassRecordResponseBody(QuizAttendance.Maintenance.Class[] GetClassRecordResult) {
+            this.GetClassRecordResult = GetClassRecordResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MaintenanceSoapChannel : QuizAttendance.Maintenance.MaintenanceSoap, System.ServiceModel.IClientChannel {
     }
@@ -782,6 +1263,125 @@ namespace QuizAttendance.Maintenance {
             inValue.Body = new QuizAttendance.Maintenance.InsertSubjectRequestBody();
             inValue.Body.Sub = Sub;
             return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).InsertSubjectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.DeleteSubjectResponse QuizAttendance.Maintenance.MaintenanceSoap.DeleteSubject(QuizAttendance.Maintenance.DeleteSubjectRequest request) {
+            return base.Channel.DeleteSubject(request);
+        }
+        
+        public void DeleteSubject(string Sub) {
+            QuizAttendance.Maintenance.DeleteSubjectRequest inValue = new QuizAttendance.Maintenance.DeleteSubjectRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSubjectRequestBody();
+            inValue.Body.Sub = Sub;
+            QuizAttendance.Maintenance.DeleteSubjectResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSubject(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSubjectResponse> QuizAttendance.Maintenance.MaintenanceSoap.DeleteSubjectAsync(QuizAttendance.Maintenance.DeleteSubjectRequest request) {
+            return base.Channel.DeleteSubjectAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSubjectResponse> DeleteSubjectAsync(string Sub) {
+            QuizAttendance.Maintenance.DeleteSubjectRequest inValue = new QuizAttendance.Maintenance.DeleteSubjectRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSubjectRequestBody();
+            inValue.Body.Sub = Sub;
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSubjectAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.DeleteSectionResponse QuizAttendance.Maintenance.MaintenanceSoap.DeleteSection(QuizAttendance.Maintenance.DeleteSectionRequest request) {
+            return base.Channel.DeleteSection(request);
+        }
+        
+        public void DeleteSection(string Sec) {
+            QuizAttendance.Maintenance.DeleteSectionRequest inValue = new QuizAttendance.Maintenance.DeleteSectionRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSectionRequestBody();
+            inValue.Body.Sec = Sec;
+            QuizAttendance.Maintenance.DeleteSectionResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSection(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSectionResponse> QuizAttendance.Maintenance.MaintenanceSoap.DeleteSectionAsync(QuizAttendance.Maintenance.DeleteSectionRequest request) {
+            return base.Channel.DeleteSectionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSectionResponse> DeleteSectionAsync(string Sec) {
+            QuizAttendance.Maintenance.DeleteSectionRequest inValue = new QuizAttendance.Maintenance.DeleteSectionRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSectionRequestBody();
+            inValue.Body.Sec = Sec;
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSectionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.DeleteRoomResponse QuizAttendance.Maintenance.MaintenanceSoap.DeleteRoom(QuizAttendance.Maintenance.DeleteRoomRequest request) {
+            return base.Channel.DeleteRoom(request);
+        }
+        
+        public void DeleteRoom(string R) {
+            QuizAttendance.Maintenance.DeleteRoomRequest inValue = new QuizAttendance.Maintenance.DeleteRoomRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteRoomRequestBody();
+            inValue.Body.R = R;
+            QuizAttendance.Maintenance.DeleteRoomResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteRoom(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteRoomResponse> QuizAttendance.Maintenance.MaintenanceSoap.DeleteRoomAsync(QuizAttendance.Maintenance.DeleteRoomRequest request) {
+            return base.Channel.DeleteRoomAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteRoomResponse> DeleteRoomAsync(string R) {
+            QuizAttendance.Maintenance.DeleteRoomRequest inValue = new QuizAttendance.Maintenance.DeleteRoomRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteRoomRequestBody();
+            inValue.Body.R = R;
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteRoomAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.DeleteSchoolYearResponse QuizAttendance.Maintenance.MaintenanceSoap.DeleteSchoolYear(QuizAttendance.Maintenance.DeleteSchoolYearRequest request) {
+            return base.Channel.DeleteSchoolYear(request);
+        }
+        
+        public void DeleteSchoolYear(string SY) {
+            QuizAttendance.Maintenance.DeleteSchoolYearRequest inValue = new QuizAttendance.Maintenance.DeleteSchoolYearRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSchoolYearRequestBody();
+            inValue.Body.SY = SY;
+            QuizAttendance.Maintenance.DeleteSchoolYearResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSchoolYear(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSchoolYearResponse> QuizAttendance.Maintenance.MaintenanceSoap.DeleteSchoolYearAsync(QuizAttendance.Maintenance.DeleteSchoolYearRequest request) {
+            return base.Channel.DeleteSchoolYearAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.DeleteSchoolYearResponse> DeleteSchoolYearAsync(string SY) {
+            QuizAttendance.Maintenance.DeleteSchoolYearRequest inValue = new QuizAttendance.Maintenance.DeleteSchoolYearRequest();
+            inValue.Body = new QuizAttendance.Maintenance.DeleteSchoolYearRequestBody();
+            inValue.Body.SY = SY;
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).DeleteSchoolYearAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuizAttendance.Maintenance.GetClassRecordResponse QuizAttendance.Maintenance.MaintenanceSoap.GetClassRecord(QuizAttendance.Maintenance.GetClassRecordRequest request) {
+            return base.Channel.GetClassRecord(request);
+        }
+        
+        public QuizAttendance.Maintenance.Class[] GetClassRecord() {
+            QuizAttendance.Maintenance.GetClassRecordRequest inValue = new QuizAttendance.Maintenance.GetClassRecordRequest();
+            inValue.Body = new QuizAttendance.Maintenance.GetClassRecordRequestBody();
+            QuizAttendance.Maintenance.GetClassRecordResponse retVal = ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).GetClassRecord(inValue);
+            return retVal.Body.GetClassRecordResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetClassRecordResponse> QuizAttendance.Maintenance.MaintenanceSoap.GetClassRecordAsync(QuizAttendance.Maintenance.GetClassRecordRequest request) {
+            return base.Channel.GetClassRecordAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuizAttendance.Maintenance.GetClassRecordResponse> GetClassRecordAsync() {
+            QuizAttendance.Maintenance.GetClassRecordRequest inValue = new QuizAttendance.Maintenance.GetClassRecordRequest();
+            inValue.Body = new QuizAttendance.Maintenance.GetClassRecordRequestBody();
+            return ((QuizAttendance.Maintenance.MaintenanceSoap)(this)).GetClassRecordAsync(inValue);
         }
     }
 }

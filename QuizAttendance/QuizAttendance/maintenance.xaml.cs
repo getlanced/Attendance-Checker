@@ -123,6 +123,10 @@ namespace QuizAttendance
                 {
                     MessageBox.Show("The item you are trying to add has already been added.", "WARNING", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+                else if (Entry.Text == "")
+                {
+                    MessageBox.Show("Entry box is empty.", "WARNING", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 else
                 {
                     var a = new Maintenance.MaintenanceSoapClient();
@@ -147,6 +151,47 @@ namespace QuizAttendance
                     }
                     MessageBox.Show("Record has been added.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     Entry.Text = "";
+                }
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (ControlInt == 0)
+            {
+                MessageBox.Show("Please choose a record to delete from.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (Results.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select an item to delete.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                else if (MessageBox.Show("Are you sure about deleting " + Results.SelectedItem.ToString() + "?", "WARNING", MessageBoxButton.YesNo, MessageBoxImage.Information) 
+                    == MessageBoxResult.Yes)
+                {
+                    string b = Results.SelectedItem.ToString();
+                    var a = new Maintenance.MaintenanceSoapClient();
+                    switch (ControlInt)
+                    {
+                        case 1:
+                            a.DeleteSchoolYear(b);
+                            UpdateWithSchoolYears(); 
+                            break;
+                        case 2:
+                            a.DeleteSection(b);
+                            UpdateWithSections();
+                            break;
+                        case 3:
+                            a.DeleteRoom(b);
+                            UpdateWithRooms();
+                            break;
+                        case 4:
+                            a.DeleteSubject(b);
+                            UpdateWithSubjects();
+                            break;
+                    }
+                    MessageBox.Show("Successfully deleted " + b + " from data.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }

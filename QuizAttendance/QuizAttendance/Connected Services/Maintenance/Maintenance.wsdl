@@ -87,6 +87,72 @@
       <s:element name="InsertSubjectResponse">
         <s:complexType />
       </s:element>
+      <s:element name="DeleteSubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sub" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSubjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteSection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sec" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSectionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRoom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="R" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRoomResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteSchoolYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSchoolYearResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClassRecord">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClassRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClassRecordResult" type="tns:ArrayOfClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Class" nillable="true" type="tns:Class" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Class">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="roomName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="subName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yearName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="termName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetSchoolYearsSoapIn">
@@ -137,6 +203,36 @@
   <wsdl:message name="InsertSubjectSoapOut">
     <wsdl:part name="parameters" element="tns:InsertSubjectResponse" />
   </wsdl:message>
+  <wsdl:message name="DeleteSubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSubject" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSectionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSection" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSectionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoomSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRoom" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRoomSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSchoolYearSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSchoolYear" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSchoolYearSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSchoolYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClassRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClassRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetClassRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClassRecordResponse" />
+  </wsdl:message>
   <wsdl:portType name="MaintenanceSoap">
     <wsdl:operation name="GetSchoolYears">
       <wsdl:input message="tns:GetSchoolYearsSoapIn" />
@@ -169,6 +265,26 @@
     <wsdl:operation name="InsertSubject">
       <wsdl:input message="tns:InsertSubjectSoapIn" />
       <wsdl:output message="tns:InsertSubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubject">
+      <wsdl:input message="tns:DeleteSubjectSoapIn" />
+      <wsdl:output message="tns:DeleteSubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSection">
+      <wsdl:input message="tns:DeleteSectionSoapIn" />
+      <wsdl:output message="tns:DeleteSectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoom">
+      <wsdl:input message="tns:DeleteRoomSoapIn" />
+      <wsdl:output message="tns:DeleteRoomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchoolYear">
+      <wsdl:input message="tns:DeleteSchoolYearSoapIn" />
+      <wsdl:output message="tns:DeleteSchoolYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassRecord">
+      <wsdl:input message="tns:GetClassRecordSoapIn" />
+      <wsdl:output message="tns:GetClassRecordSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MaintenanceSoap" type="tns:MaintenanceSoap">
@@ -245,6 +361,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteSubject">
+      <soap:operation soapAction="http://tempuri.org/DeleteSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSection">
+      <soap:operation soapAction="http://tempuri.org/DeleteSection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoom">
+      <soap:operation soapAction="http://tempuri.org/DeleteRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchoolYear">
+      <soap:operation soapAction="http://tempuri.org/DeleteSchoolYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassRecord">
+      <soap:operation soapAction="http://tempuri.org/GetClassRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MaintenanceSoap12" type="tns:MaintenanceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -313,6 +474,51 @@
     </wsdl:operation>
     <wsdl:operation name="InsertSubject">
       <soap12:operation soapAction="http://tempuri.org/InsertSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubject">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSection">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoom">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchoolYear">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSchoolYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetClassRecord" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

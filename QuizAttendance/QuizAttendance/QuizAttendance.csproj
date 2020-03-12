@@ -173,6 +173,18 @@
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.Class.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.DeleteRoomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.DeleteSchoolYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.DeleteSectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.DeleteSubjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\Maintenance\QuizAttendance.Maintenance.GetClassRecordResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

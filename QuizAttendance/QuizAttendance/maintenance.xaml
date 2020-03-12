@@ -10,13 +10,15 @@
 
     <Grid Width="648" Height="620">
         <Grid HorizontalAlignment="Left" Height="620" VerticalAlignment="Top" Width="648" Background="#FFFCFCFC">
-            <ListView x:Name="Results" HorizontalAlignment="Left" Height="445" Margin="163,175,0,0" VerticalAlignment="Top" Width="485"/>
+            <ListView x:Name="Results" HorizontalAlignment="Left" Height="381" Margin="163,175,0,0" VerticalAlignment="Top" Width="462"/>
             <Button x:Name="Section" Content="Section" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,293,0,0" Height="28" Click="Section_Click"/>
             <Button x:Name="Room" Content="Room" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,243,0,0" Height="28" Click="Room_Click"/>
             <Button x:Name="SchoolYear" Content="School Year" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,197,0,0" Height="28" Click="SchoolYear_Click"/>
             <Button x:Name="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="32,341,0,0" Height="28" Click="Subject_Click" Content="Subject"/>
             <Button x:Name="AddEntry" Content="Add" HorizontalAlignment="Left" Margin="32,60,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="AddEntry_Click"/>
-            <TextBox x:Name="Entry" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+            <TextBox x:Name="Entry" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
+            <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="32,104,0,0" VerticalAlignment="Top" Width="102" Height="24" Click="Delete_Click"/>
+            <Button x:Name="Students" Content="Students" HorizontalAlignment="Left" Height="30" Margin="32,392,0,0" VerticalAlignment="Top" Width="102"/>
         </Grid>
 
     </Grid>

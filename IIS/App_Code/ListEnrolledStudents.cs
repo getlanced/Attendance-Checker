@@ -130,6 +130,7 @@ public class ListEnrolledStudents : System.Web.Services.WebService
 
         return IsExisting;
     }
+
     public class Student
     {
         public string studNum { get; set; }
