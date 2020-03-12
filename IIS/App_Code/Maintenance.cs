@@ -169,6 +169,26 @@ public class Maintenance : System.Web.Services.WebService
     }
 	
 	[WebMethod]
+	public void InsertClass(string rm, string sub, string sect, string year, string term, string st, string et)
+	{
+		var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("InsertClassRecord", conn);
+
+		conn.Open();
+		cmd.Parameters.Add("@roomName", SqlDbType.NVarChar,10).Value = rm;
+		cmd.Parameters.Add("@subjName",SqlDbType.NVarChar, 15).Value = sub;
+		cmd.Parameters.Add("@sectName",SqlDbType.NVarChar,5).Value = sect;
+		cmd.Parameters.Add("@yearName", SqlDbType.NChar,9).Value = year;
+		cmd.Parameters.Add("@termName", SqlDbType.NVarChar,2).Value = term;
+		cmd.Parameters.AddWithValue("@startTime",TimeSpan.Parse(st));
+		cmd.Parameters.AddWithValue("@endTime",TimeSpan.Parse(et));
+		
+		cmd.CommandType = CommandType.StoredProcedure;
+		cmd.ExecuteNonQuery();
+        conn.Close();
+	}
+	
+	[WebMethod]
 	public List<Class> GetClassRecord()
 	{
 		var classRec = new List<Class>();
