@@ -192,23 +192,19 @@ namespace QuizAttendance
                     //Cross out room
                     for (int i = 0; i < rooms.Count; i++)
                     {
-                        if(rooms[i] == c.roomName)
+                        if(rooms[i] == c.roomName )
                             free_rooms_index[i] = false;
                     }
                 }
-                int  p = int.Parse(period_comboBox.Text);
-                //Check if period number overlaps with other start times
-                for (int i = startTime_comboBox.SelectedIndex; i < 9-p; i++)
+                //If start time is the same for the same term and year, cross out
+                if (c.startTime == startTime_comboBox.Text
+                    && c.termName == term_comboBox.Text
+                    && c.yearName == year_comboBox.Text)
                 {
-                    //Compare startTime with the combobox's index
-                    if (c.startTime == time_list[i])
+                    for (int i = 0; i < rooms.Count; i++)
                     {
-                        //If so, cross out room
-                        for (int j = 0; j < rooms.Count; j++)
-                        {
-                            if (rooms[j] == c.roomName)
-                                free_rooms_index[j] = false;
-                        }
+                        if (rooms[i] == c.roomName)
+                            free_rooms_index[i] = false;
                     }
                 }
             }
@@ -239,30 +235,39 @@ namespace QuizAttendance
         }
         private void Add_class_button_Click(object sender, RoutedEventArgs e)
         {
-            //var a = new Maintenance.MaintenanceSoapClient();
-            //string sub = subjects_listView.SelectedItems[0].ToString();
+            var a = new Maintenance.MaintenanceSoapClient();
+            string sub = subjects_listView.SelectedItems[0].ToString();
 
-            //string[] end_time_list = new string[9] { "09:00:00", "10:30:00", "12:00:00",
-            //"13:30:00", "15:00:00", "16:30:00", "18:00:00", "19:30:00", "21:00:00" };
+            string[] end_time_list = new string[9] { "09:00:00", "10:30:00", "12:00:00",
+            "13:30:00", "15:00:00", "16:30:00", "18:00:00", "19:30:00", "21:00:00" };
 
-            //int k = int.Parse(period_comboBox.Text);
-            //string endTime = end_time_list[startTime_comboBox.SelectedIndex + k-1];
-            
-            //using (a)
-            //{
-            //    a.InsertClass(availableRooms_comboBox.Text,
-            //                sub,
-            //                section_comboBox.Text,
-            //                year_comboBox.Text,
-            //                term_comboBox.Text,
-            //                startTime_comboBox.Text,
-            //                endTime
-            //        );
-            //}
-            //end_time_list = null;
-            //a = null;
-            //UpdateWithNewClass();
-            //ResetFields();
+            string[] start_time_list = new string[9] { "07:30:00", "09:00:00", "10:30:00", "12:00:00",
+            "13:30:00", "15:00:00", "16:30:00", "18:00:00", "19:30:00"};
+
+            int starting_index = 0;
+            for(int i =0; i<start_time_list.Length;i++)
+            {
+                if (startTime_comboBox.Text == start_time_list[i])
+                    starting_index = i;
+            }
+
+            int k = int.Parse(period_comboBox.Text);
+            a.Open();
+            for (int i = starting_index; i < k; i++)
+            {
+                a.InsertClass(availableRooms_comboBox.Text,
+                                sub,
+                                section_comboBox.Text,
+                                year_comboBox.Text,
+                                term_comboBox.Text,
+                                start_time_list[i],
+                                end_time_list[i]
+                                );
+                UpdateWithNewClass();
+            }
+            a.Close();
+            a = null;
+            ResetFields();
         }
 
         private void FillClassTable()
@@ -290,8 +295,6 @@ namespace QuizAttendance
         private void ResetFields()
         {
             year_comboBox.ItemsSource = null;
-
-            subjects_listView.Items.Clear();
 
             section_comboBox.ItemsSource = null;
             section_comboBox.Items.Clear();
