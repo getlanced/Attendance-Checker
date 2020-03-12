@@ -117,9 +117,9 @@ public class Maintenance : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public List<Student> GetStudents()
+    public List<string> GetStudents()
     {
-        var arr = new List<Student>();
+        var arr = new List<string>();
 
         var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
         var cmd = new SqlCommand("GetStudents", conn);
@@ -132,10 +132,7 @@ public class Maintenance : System.Web.Services.WebService
         dataAdapter.Fill(dt);
         foreach (DataRow dr in dt.Rows)
         {
-            var a = new Student();
-            a.studNum = dr["StudentNumber"].ToString();
-            a.fullName = string.Format("{0},{1},{2}",dr["LastName"].ToString(),dr["GivenName"].ToString(),dr["MiddleInitial"].ToString());
-            arr.Add(a);
+            arr.Add(dr["SubjectName"].ToString());
         }
 
         conn.Close();
@@ -189,22 +186,6 @@ public class Maintenance : System.Web.Services.WebService
 
         conn.Open();
         cmd.Parameters.Add("@Subject", SqlDbType.NVarChar, 15).Value = Sub;
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.ExecuteNonQuery();
-        conn.Close();
-    }
-
-    [WebMethod]
-    public void InsertStudent(string LName, string GName, string MInitial, string StudNum)
-    {
-        var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
-        var cmd = new SqlCommand("InsertStudent", conn);
-
-        conn.Open();
-        cmd.Parameters.Add("@LName", SqlDbType.NVarChar, 50).Value = LName;
-        cmd.Parameters.Add("@GName", SqlDbType.NVarChar, 50).Value = GName;
-        cmd.Parameters.Add("@MInitial", SqlDbType.NVarChar, 5).Value = MInitial;
-        cmd.Parameters.Add("@StudNum", SqlDbType.Char, 10).Value = StudNum;
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.ExecuteNonQuery();
         conn.Close();
@@ -295,6 +276,25 @@ public class Maintenance : System.Web.Services.WebService
         return classRec;
 	}
 	
+	[WebMethod]
+	public void InsertClass(string rm,string sub,string sect,string year ,string term,string st,string et)
+	{
+		var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
+        var cmd = new SqlCommand("InsertClassRecord", conn);
+		
+		conn.Open();
+		cmd.Parameters.Add("@roomName", SqlDbType.NVarChar, 10).Value = rm;
+        cmd.Parameters.Add("@subjName", SqlDbType.NVarChar, 15).Value = sub;
+        cmd.Parameters.Add("@sectName", SqlDbType.NVarChar,6).Value = sect;
+        cmd.Parameters.Add("@yearName",SqlDbType.NChar,9).Value = year;
+        cmd.Parameters.Add("@termName", SqlDbType.NVarChar,2 ).Value = term;
+        cmd.Parameters.AddWithValue("@startTime", st);
+		cmd.Parameters.AddWithValue("@endTime", et);
+		
+		cmd.CommandType = CommandType.StoredProcedure;
+		cmd.ExecuteNonQuery();
+		conn.Close();
+	}
 	public class Class
 	{
 		public string roomName {get; set;}
@@ -305,10 +305,4 @@ public class Maintenance : System.Web.Services.WebService
 		public string startTime {get; set;}
 		public string endTime {get; set;}
 	}
-
-    public class Student
-    {
-        public string fullName;
-        public string studNum;
-    }
 }
