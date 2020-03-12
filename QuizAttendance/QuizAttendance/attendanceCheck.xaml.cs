@@ -34,8 +34,10 @@ namespace QuizAttendance
             var a = new ListEnrolledStudents.ListEnrolledStudentsSoapClient();
             string date = month_comboBox.Text + '/' + day_comboBox.Text + '/' + year_textBox.Text;
 
+
             using (a)
             {
+
                 var dt = new DataTable { TableName = "Attendance Sheet" };
                 var li = a.ShowEnrolledStudents(
                     term_comboBox.Text,
@@ -56,23 +58,38 @@ namespace QuizAttendance
         {
             var a = new ListEnrolledStudents.ListEnrolledStudentsSoapClient();
             string date = month_comboBox.Text + '/' + day_comboBox.Text + '/' + year_textBox.Text;
+            var IsExisting = a.CheckExistingRecord(
+                room_textBox.Text,
+                date,
+                startTime_comboBox.Text,
+                endTime_comboBox.Text);
             using (a)
             {
                 foreach (ListEnrolledStudents.Student l in checkAttendance_dataGrid.Items)
                 {
-                    a.UpdateAttendanceRecord(
-                        date,
-                        l.studNum,
-                        l.studAtt
-                        );
-                    a.InsertToAttendanceRecord(
-                        term_comboBox.Text,
-                        year_textBox.Text,
-                        subSec_textBox.Text,
-                        date,
-                        l.studNum,
-                        l.studAtt
-                        );
+                    if(IsExisting == true)
+                    {
+                        a.UpdateAttendanceRecord(
+                       date,
+                       l.studNum,
+                       l.studAtt
+                       );
+                    }
+                    else
+                    {
+                        
+
+                        a.InsertToAttendanceRecord(
+                       term_comboBox.Text,
+                       year_textBox.Text,
+                       subSec_textBox.Text,
+                       date,
+                       l.studNum,
+                       l.studAtt
+                       );
+                    }
+                   
+                   
                 }
             }
             a = null;

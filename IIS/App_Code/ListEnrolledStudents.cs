@@ -95,36 +95,30 @@ public class ListEnrolledStudents : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public bool CheckExistingRecord(string Class, string date, string endTime, string startTime)
+    public bool CheckExistingRecord(string Class, string date, string startTime, string endTime)
     {
         bool IsExisting = false;
         var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Test"].ConnectionString);
         conn.Open();
 
         var cmd = new SqlCommand("CheckExistingAttendanceRecord", conn);
+        cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@room", SqlDbType.NVarChar, 10).Value = Class;
         cmd.Parameters.Add("@date", SqlDbType.Date).Value = date;
         cmd.Parameters.Add("@endTime", SqlDbType.Time, 7).Value = endTime;
         cmd.Parameters.Add("@startTime", SqlDbType.Time, 7).Value = startTime;
 
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.ExecuteNonQuery();
-
         SqlDataReader dr = cmd.ExecuteReader();
         if (dr.Read())
         {
-            if (dr.GetString(1).ToString() == null)
-            {
-                conn.Close();
-                IsExisting = false;
+                IsExisting = true;
 
-            }
 
         }
         else
         {
             conn.Close();
-            IsExisting = true;
+            IsExisting = false;
 
         }
 

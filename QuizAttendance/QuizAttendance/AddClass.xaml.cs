@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.Data;
 
 namespace QuizAttendance
 {
@@ -24,6 +25,7 @@ namespace QuizAttendance
         public AddClass()
         {
             InitializeComponent();
+            FillClassTable();
         }
 
         public void PopulateStartTimeComboBox()
@@ -44,6 +46,7 @@ namespace QuizAttendance
         }
         public void PopulateYearComboBox()
         {
+            year_comboBox.ItemsSource = null;
             year_comboBox.Items.Clear();
             var a = new Maintenance.MaintenanceSoapClient();
             var year_item = new ObservableCollection<string>();
@@ -236,7 +239,66 @@ namespace QuizAttendance
         }
         private void Add_class_button_Click(object sender, RoutedEventArgs e)
         {
-            //insert stored proc here
+            var a = new Maintenance.MaintenanceSoapClient();
+            string sub = subjects_listView.SelectedItems[0].ToString();
+
+            string[] end_time_list = new string[9] { "09:00:00", "10:30:00", "12:00:00",
+            "13:30:00", "15:00:00", "16:30:00", "18:00:00", "19:30:00", "21:00:00" };
+
+            int k = int.Parse(period_comboBox.Text);
+            string endTime = end_time_list[startTime_comboBox.SelectedIndex + k-1];
+            
+            using (a)
+            {
+                a.InsertClass(availableRooms_comboBox.Text,
+                            sub,
+                            section_comboBox.Text,
+                            year_comboBox.Text,
+                            term_comboBox.Text,
+                            startTime_comboBox.Text,
+                            endTime
+                    );
+            }
+            end_time_list = null;
+            a = null;
+            UpdateWithNewClass();
+            ResetFields();
+        }
+
+        private void FillClassTable()
+        {
+            var a = new Maintenance.MaintenanceSoapClient();
+            using (a)
+            {
+                var dt = new DataTable { TableName = "Class Record" };
+                var li = a.GetClassRecord();
+                foreach (Maintenance.Class c in li)
+                {
+                    classRecord_dataGrid.Items.Add(c);
+                }
+            }
+            a = null;
+        }
+
+        private void UpdateWithNewClass()
+        {
+            classRecord_dataGrid.Items.Clear();
+            classRecord_dataGrid.Items.Refresh();
+            FillClassTable();
+        }
+
+        private void ResetFields()
+        {
+            year_comboBox.ItemsSource = null;
+
+            subjects_listView.Items.Clear();
+
+            section_comboBox.ItemsSource = null;
+            section_comboBox.Items.Clear();
+            period_comboBox.SelectedIndex = 1;
+            PopulateStartTimeComboBox();
+            availableRooms_comboBox.ItemsSource = null;
+            availableRooms_comboBox.Items.Clear();
         }
     }
 }
